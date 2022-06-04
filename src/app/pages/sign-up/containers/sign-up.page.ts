@@ -26,11 +26,11 @@ export class SignUpPage implements OnInit {
       lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       birthDay: ['', [Validators.required,]],
       phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      Address: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-      City: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      State: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      ZipCode: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
-      Country: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      address: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      city: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      state: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      zipCode: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
+      country: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       });
   }
 
