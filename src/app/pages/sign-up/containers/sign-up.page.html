@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-title>Formulario de registro</ion-title>
+  </ion-toolbar>
+
+  <ion-segment (ionChange)="segmentChanged($event)" value="identity">
+    <ion-segment-button value="identity">
+      <ion-label>Credenciales</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="userData">
+      <ion-label>Datos personales</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="address">
+      <ion-label>Dirección</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+  <ion-grid class="ion-margin-top">
+    <ng-container  *ngIf="segment === 'identity';">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input name="email" type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Contraseña</ion-label>
+            <ion-input name="password" type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Confirma contraseña</ion-label>
+            <ion-input name="confirmPassword" type="password" formControlName="confirmPassword"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    <ng-container  *ngIf="segment === 'userData';">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input name="firstName" type="text" formControlName="firstName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Apellidos</ion-label>
+            <ion-input name="lastName" type="text" formControlName="lastName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Cumpleaños</ion-label>
+            <ion-input [value]="dateValue2" formControlName="birthDay"></ion-input>
+            <ion-button fill="clear" id="open-date-input-2">
+              <ion-icon icon="calendar"></ion-icon>
+            </ion-button>
+            <ion-popover trigger="open-date-input-2" show-backdrop="false">
+              <ng-template>
+                <ion-datetime
+                  #popoverDatetime2
+                  presentation="date"
+                  (ionChange)="dateValue2 = formatDate(popoverDatetime2.value)"
+                ></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Teléfono</ion-label>
+            <ion-input name="phoneNumber" type="text" formControlName="phoneNumber"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+    <ion-row>
+      <ion-col>
+        <ion-button class="button-end" color="primary" expand="full" type="submit"
+
+        >Registrarse</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </form>
+
+</ion-content>
