@@ -21,7 +21,7 @@ import {CoreModule} from "./core/core.module";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [sdkApiConfigurationProvider,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -6,15 +6,11 @@ import {Router, RouterEvent} from "@angular/router";
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public active:string = '';
   public appPages = [
-    { title: 'Home', url: '', icon: 'home' },
+    { title: 'Home', url: 'sign-up', icon: 'home' },
     { title: 'Login', url: '/login', icon: 'key' },
 
   ];
-  constructor(protected router: Router) {
-    this.router.events.subscribe((event: RouterEvent) => {
-      this.active = event.url
-    })
+  constructor() {
   }
 }

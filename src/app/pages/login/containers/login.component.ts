@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "../../../shared/services/auth/auth.service";
 import {UsersService} from "../../../shared/sdk";
@@ -14,16 +14,16 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
   users: any;
-  showAlert = false;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               protected authService:AuthService,
               protected userService: UsersService,
               protected storageService:StorageService) {
+
     this.form = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required])
     });
 
   }
@@ -50,9 +50,6 @@ export class LoginComponent implements OnInit {
         const errorMessage = err.error.esMessage ?? err.message ;
         this.form.reset();
       });
-    }else
-    {
-      this.showAlert = true;
     }
   }
 
