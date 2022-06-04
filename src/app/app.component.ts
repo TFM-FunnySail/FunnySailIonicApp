@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
+import {Router, RouterEvent} from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  public active:string = '';
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Login', url: '/login', icon: 'trash' },
-    { title: 'SignUp', url: '/sign-up', icon: 'warning' },
+    { title: 'Home', url: '', icon: 'home' },
+    { title: 'Login', url: '/login', icon: 'key' },
+
   ];
-  constructor() {}
+  constructor(protected router: Router) {
+    this.router.events.subscribe((event: RouterEvent) => {
+      this.active = event.url
+    })
+  }
 }
