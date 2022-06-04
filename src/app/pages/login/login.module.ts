@@ -2,8 +2,9 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {LoginComponent} from "./containers/login.component";
 import {LoginRoutingModule} from "./login-routing.module";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CoreModule} from "../../core/core.module";
+import {IonicModule} from "@ionic/angular";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {CoreModule} from "../../core/core.module";
   imports: [
     CommonModule,
     LoginRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     CoreModule
   ]
