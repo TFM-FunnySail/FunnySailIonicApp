@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {sdkApiConfigurationProvider} from './shared/sdkApiConfigurationFactory';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {CoreModule} from "./core/core.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,9 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule,
+    CoreModule
+  ],
   providers: [sdkApiConfigurationProvider,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
