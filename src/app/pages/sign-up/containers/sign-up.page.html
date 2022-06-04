@@ -112,6 +112,13 @@
     </ng-container>
     <ion-row>
       <ion-col>
+        <ion-text class="ion-text-center" color="danger">
+          <h4>{{error}}</h4>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
         <ion-button class="button-end" color="primary" expand="full" type="submit"
                     [disabled]="registerForm.invalid"
         >Registrarse</ion-button>
