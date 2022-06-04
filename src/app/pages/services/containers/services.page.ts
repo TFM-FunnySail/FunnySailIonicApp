@@ -33,7 +33,7 @@ export class ServicesPage implements OnInit {
       maxPrice: ['']
     });
 
-    this.serviceApiService.apiServicesGet().subscribe(resp => {
+    this.serviceApiService.apiServicesGet(undefined,true).subscribe(resp => {
       this.services = this.handlerServices(resp).items;
     });
   }
@@ -56,7 +56,7 @@ export class ServicesPage implements OnInit {
       if (this.form.get('maxPrice').value) {
         maxPrice = this.form.get('maxPrice').value;
       }
-      this.serviceApiService.apiServicesGet(undefined, undefined, minPrice, maxPrice, name).subscribe(resp => {
+      this.serviceApiService.apiServicesGet(undefined, true, minPrice, maxPrice, name).subscribe(resp => {
         this.services = this.handlerServices(resp).items;
       });
     }

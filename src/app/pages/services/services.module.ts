@@ -8,6 +8,7 @@ import { ServicesPageRoutingModule } from './services-routing.module';
 
 import { ServicesPage } from './containers/services.page';
 import {CoreModule} from "../../core/core.module";
+import {ServiceCardModule} from "../../core/components/service-card/service-card.module";
 
 @NgModule({
   imports: [
