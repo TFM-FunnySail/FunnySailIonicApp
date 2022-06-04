@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {LoginModule} from "./pages/login/login.module";
+import {SignUpPageModule} from "./pages/sign-up/sign-up.module";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'login',
     pathMatch: 'full'
-  },
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
     path: 'login',
@@ -18,9 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'sign-up',
-    loadChildren: () => import('./pages/sign-up/sign-up.module').then(m => m.SignUpPageModule)
+    loadChildren: () => SignUpPageModule
   },
-
 ];
 
 @NgModule({
