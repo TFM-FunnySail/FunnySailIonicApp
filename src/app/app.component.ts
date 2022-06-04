@@ -8,6 +8,7 @@ import {Router, RouterEvent} from "@angular/router";
 export class AppComponent {
   public appPages = [
     { title: 'Home', url: 'sign-up', icon: 'home' },
+    { title: 'Servicios', url: '/services', icon: 'easel' },
     { title: 'Login', url: '/login', icon: 'key' },
 
   ];
