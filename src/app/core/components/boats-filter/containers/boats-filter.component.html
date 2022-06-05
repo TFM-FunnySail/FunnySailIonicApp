@@ -20,6 +20,7 @@
                   [min]="minDate"
                   #popoverDatetime1
                   presentation="date"
+                  [value]="initialDateInput"
                   (ionChange)="initialDate = formatDate(popoverDatetime1.value)"
                 ></ion-datetime>
               </ng-template>
@@ -39,6 +40,7 @@
                 [min]="minDate"
                 #popoverDatetime2
                 presentation="date"
+                [value]="endDateInput"
                 (ionChange)="endDate = formatDate(popoverDatetime2.value)"
               ></ion-datetime>
             </ng-template>

@@ -42,7 +42,7 @@ export class BoatsPage implements OnInit {
       if(parameters['initialDate'] && parameters['initialDate'] !== '')
       {
         initialDate = decodeURIComponent(parameters['initialDate']);
-        console.log(initialDate);
+        console.log('initialDate',initialDate);
         this.form.get('initialDate').setValue(initialDate);
         this.initialDate = initialDate;
       }
@@ -50,6 +50,7 @@ export class BoatsPage implements OnInit {
       if(parameters['endDate'] && parameters['endDate'] !== '')
       {
         endDate = decodeURIComponent(parameters['endDate']);
+        console.log('endDate',endDate);
         this.form.get('endDate').setValue(endDate);
         this.endDate = endDate;
       }
