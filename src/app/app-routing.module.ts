@@ -35,4 +35,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+// @ts-ignore
 export class AppRoutingModule {}

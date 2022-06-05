@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ServiceDetailPageRoutingModule } from './service-detail-routing.module';
 
 import { ServiceDetailPage } from './containers/service-detail.page';
+import {ContactModule} from "../../core/components/contact/contact.module";
 import {CoreModule} from "../../core/core.module";
 
 @NgModule({
