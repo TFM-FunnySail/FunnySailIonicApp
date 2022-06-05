@@ -23,7 +23,11 @@ export class BoatsFilterComponent implements OnInit {
   endDate:any;
   minDate: any;
 
+  static idInput1:number = 0;
+  static idInput2:number = 10000;
   form:FormGroup;
+  idInput1: number;
+  idInput2: number;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
@@ -34,10 +38,18 @@ export class BoatsFilterComponent implements OnInit {
     });
 
     this.minDate = new Date(Date.now()).toISOString();
-    console.log(this.minDate);
+    console.log('constructor del filtro',this.initialDate,this.endDate);
+
+    BoatsFilterComponent.idInput1 +=1;
+    BoatsFilterComponent.idInput2 +=1;
+
+    this.idInput1 = BoatsFilterComponent.idInput1;
+    this.idInput2 = BoatsFilterComponent.idInput2;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('inicializo el component de filtro');
+  }
 
   onSearch($event: any) {
     if(!this.form.invalid){
