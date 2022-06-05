@@ -10,6 +10,10 @@ export class BoatCardComponent implements OnInit {
 
   @Input()
   boat:BoatOutputDTO;
+  @Input()
+  initDate: string = '';
+  @Input()
+  endDate: string = '';
 
   constructor() { }
 

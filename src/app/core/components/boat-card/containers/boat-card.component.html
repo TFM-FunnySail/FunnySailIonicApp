@@ -1,6 +1,6 @@
-<ion-card [routerLink]="['/boat/' + boat.id]">
+<ion-card [routerLink]="['/boat']" [queryParams]="{id: boat.id , initialDate: this.initDate, endDate: this.endDate}">
   <ion-card-header>
-    <ion-card-title><a [routerLink]="['/boat/' + boat.id]">{{boat.name}}</a></ion-card-title>
+    <ion-card-title><a [routerLink]="['/boat']" [queryParams]="{id: boat.id , initialDate: this.initDate, endDate: this.endDate}">{{boat.name}}</a></ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <ion-grid>

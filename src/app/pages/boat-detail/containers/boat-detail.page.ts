@@ -23,25 +23,24 @@ export class BoatDetailPage implements OnInit {
     private router: Router
   ) {
     this.boat={};
+  }
+
+  ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(parameters => {
+      console.log('parameters',parameters);
       this.boatId = parameters['id'] as string;
       this.initialDate = parameters['initialDate'];
       this.endDate = parameters['endDate'];
       if (this.boatId) {
         this.boatsApiService.apiBoatsIdGet(parseInt(this.boatId),this.initialDate,this.endDate).subscribe((resp: BoatOutputDTO) => {
+            console.log('detalles del barco',resp);
             this.boat = resp;
             this.mainImage = resp.boatResources.find(x=>x.main)?.uri ??
-                              resp.boatResources.length > 0 ? resp.boatResources[0].uri : '';
+            resp.boatResources.length > 0 ? resp.boatResources[0].uri : '';
           }
         );
       }
     });
-
-
-  }
-
-  ngOnInit(): void {
-    console.log('BOAT PAGE')
   }
 
   booking(){
