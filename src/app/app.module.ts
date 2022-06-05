@@ -10,10 +10,9 @@ import {sdkApiConfigurationProvider} from './shared/sdkApiConfigurationFactory';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
-import { ApiImagePipe } from './shared/pipes/apiImage/api-image.pipe';
 
 @NgModule({
-  declarations: [AppComponent, ApiImagePipe],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -24,7 +23,10 @@ import { ApiImagePipe } from './shared/pipes/apiImage/api-image.pipe';
     ReactiveFormsModule,
     CoreModule,
   ],
-  providers: [sdkApiConfigurationProvider,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [sdkApiConfigurationProvider, {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
+  exports: [
+
+  ]
 })
 export class AppModule {}
