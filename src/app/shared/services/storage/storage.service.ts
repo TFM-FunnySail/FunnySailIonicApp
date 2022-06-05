@@ -18,4 +18,8 @@ export class StorageService {
   deleteItem(key: string) {
     return localStorage.removeItem(key);
   }
+
+  public setItemAndParse(key:string,value:any){
+    return localStorage.setItem(key,JSON.stringify(value));
+  }
 }

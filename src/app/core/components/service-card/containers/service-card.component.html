@@ -1,0 +1,11 @@
+<ion-card [routerLink]="['/service/' + service.id]">
+<ion-card-header>
+  <ion-card-title>{{service.name}}</ion-card-title>
+</ion-card-header>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row><ion-text>{{service.description}}</ion-text></ion-row>
+      <ion-row class="ion-margin-top"><ion-text>{{service.price | currency:'EUR'}}</ion-text></ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

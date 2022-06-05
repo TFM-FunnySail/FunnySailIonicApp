@@ -14,6 +14,7 @@ export class SignUpPage implements OnInit {
   public segment:string = "identity";
   registerForm: FormGroup;
   dateValue2: any;
+  error: string;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
@@ -21,8 +22,8 @@ export class SignUpPage implements OnInit {
     this.registerForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9_@./#&+-]{8,25}$')]],
-      confirmPassword: ['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9_@./#&+-]{8,25}$')]],
+      password: ['', [Validators.required,Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9_@./#&+-]{8,25}$')]],
+      confirmPassword: ['', [Validators.required,Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9_@./#&+-]{8,25}$')]],
       lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       birthDay: ['', [Validators.required,]],
       phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
@@ -48,18 +49,24 @@ export class SignUpPage implements OnInit {
 
   segmentChanged($event: any) {
     this.segment = $event.detail.value;
-    console.log(this.segment);
   }
 
   onSubmit() {
-
+    this.error = "";
     if(!this.registerForm.invalid){
       console.log(this.registerForm.value);
+      const values = this.registerForm.value;
+      if(values.password !== values.confirmPassword){
+        this.error = "Las contraseñas deben ser iguales";
+        return;
+      }
       this.registerForm.value.birthDay = this.reFormatDate(this.registerForm.value.birthDay);
       this.userService.apiUsersPost(this.registerForm.value).subscribe(()=>{
         this.router.navigate(['']);
       }, (error) => {
         console.log(error);
+        this.error = error.error.esMessage ?? error.errors.title ?? error.message;
+
       });
     }
   }

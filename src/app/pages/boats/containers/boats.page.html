@@ -1,0 +1,14 @@
+<app-header [title]="'Embarcaciones'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <app-boats-filter [title]="'Busque sus embarcaciones'" (search)="search($event)"></app-boats-filter>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let boat of boats;" size="12">
+        <app-boat-card [boat]="boat"></app-boat-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

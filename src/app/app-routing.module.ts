@@ -19,6 +19,20 @@ const routes: Routes = [
     loadChildren: () => SignUpPageModule
   },
   {
+    path: 'services',
+    loadChildren: () => import('./pages/services/services.module').then(m => m.ServicesPageModule)
+  },
+  {
+    path: 'service/:id',
+    loadChildren: () => import('./pages/service-detail/service-detail.module').then(m => m.ServiceDetailPageModule)
+  },
+  {
+    path: 'boats',
+    loadChildren: () => import('./pages/boats/boats.module').then(m => m.BoatsPageModule)
+  },
+
+
+  {
     path: 'home',
     loadChildren: () => HomeModule
   },
@@ -30,4 +44,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+// @ts-ignore
 export class AppRoutingModule {}
