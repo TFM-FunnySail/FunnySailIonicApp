@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BoatOutputDTO, BoatOutputDTOGenericResponseDTO, BoatsService} from "../../../shared/sdk";
 import {ActivatedRoute, Router} from "@angular/router";
 import {StorageService} from "../../../shared/services/storage/storage.service";
+import {BookingCartService} from "../../../shared/services/booking-cart/booking-cart.service";
 
 @Component({
   selector: 'app-boat-detail',
@@ -20,7 +21,8 @@ export class BoatDetailPage implements OnInit {
     protected boatsApiService: BoatsService,
     protected activatedRoute: ActivatedRoute,
     private storageService: StorageService,
-    private router: Router
+    private router: Router,
+    protected bookingCartService:BookingCartService
   ) {
     this.boat={};
   }
@@ -44,9 +46,9 @@ export class BoatDetailPage implements OnInit {
   }
 
   booking(){
-    const id = this.boatId;
-    if (id) {
-
+    if (this.boat) {
+      //El valor false esta provisional
+      this.bookingCartService.addBoat(this.boat,this.initialDate,this.endDate,false);
       this.router.navigate(['/boats']);
     }
   }
