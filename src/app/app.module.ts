@@ -10,9 +10,10 @@ import {sdkApiConfigurationProvider} from './shared/sdkApiConfigurationFactory';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
+import { ApiImagePipe } from './shared/pipes/apiImage/api-image.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ApiImagePipe],
   entryComponents: [],
   imports: [
     BrowserModule,
