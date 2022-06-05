@@ -13,6 +13,7 @@ export class AppComponent {
     { title: 'Login', url: '/login', icon: 'key' },
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Actividades', url: '/activities', icon: 'fish' },
+    { title: 'Perfil', url: '/profile', icon: 'person'},
   ];
   constructor() {
   }

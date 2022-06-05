@@ -38,10 +38,13 @@ const routes: Routes = [
     path: 'activity/:id',
     loadChildren: () => import('./pages/activity-detail/activity-detail.module').then(m => m.ActivityDetailPageModule)
   },
-
   {
     path: 'home',
     loadChildren: () => HomePageModule
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
   },
 ];
 
