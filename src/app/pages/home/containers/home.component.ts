@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
+  form: any;
   linksMenus: any[] = [
     {
       name: 'Activities',
@@ -54,9 +55,22 @@ export class HomeComponent implements OnInit {
       comment: 'Random comment'
     }
   ];
-  constructor(private router: Router) { }
+  constructor(private router: Router, private formBuilder: FormBuilder,) { }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      initialDate: ['', Validators.required],
+      endDate: ['', Validators.required]
+    });
+  }
+
+  search($event: any) {
+
+    const initialDate = $event.initialDate;
+    const endDate = $event.endDate;
+
+    this.router.navigate(['/boats'], { queryParams: { initialDate, endDate } });
+  }
 
   rent() {
     this.router.navigate(['/rent-boat']);

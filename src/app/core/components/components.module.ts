@@ -16,7 +16,7 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
     ContactModule,
     CartModule,
     BoatsFilterModule,
-    BoatCardModule
+    BoatCardModule,
     FooterModule,
     CardMenuModule,
     CommentModule,
@@ -27,7 +27,7 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
     ContactModule,
     CartModule,
     BoatsFilterModule,
-    BoatCardModule
+    BoatCardModule,
     FooterModule,
     CardMenuModule,
     CommentModule,

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
-
+  <app-boats-filter [title]="'¡La mejor solución para alquilar un barco!'" [subTitle]="'Más de 40,000 barcos que alquilar al mejor precio y en todo el mundo.'" (search)="search($event)"></app-boats-filter>
   <ion-card *ngFor="let linkMenu of linksMenus">
     <card-menu [linkMenu]="linkMenu" [link]="linkMenu.linkPage"></card-menu>
   </ion-card>
