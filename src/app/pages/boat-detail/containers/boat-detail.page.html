@@ -1,0 +1,51 @@
+<app-header [title]="'Detalles de la embarcación'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-img [src]="mainImage"></ion-img>
+      </ion-col>
+      <ion-col>
+        <h2>{{boat.name}} / {{boat.registration}}</h2>
+      </ion-col>
+      <ion-col>
+        <ion-text>{{boat.description}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <img alt='Capacity icon' src="assets/capacity.png" width="35" style="margin-bottom:10px;">
+              <p>{{boat.capacity}} Personas</p>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <img alt='length icon' src="assets/boat-length.png" width="35" style="margin-bottom:10px;">
+              <p>{{boat.length}} m Longitud</p>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <img alt='width icon' src="assets/boat-width.png" width="35" style="margin-bottom:10px;">
+              <p>{{boat.sleeve}} m Manga</p>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <img alt="power icon" src="assets/boat-power.png" width="35" style="margin-bottom:10px;">
+              <p>{{boat.motorPower}} Potencia</p>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <img alt="price icon" src="assets/price-tag.png" width="35" style="margin-bottom:10px;">
+              <p>{{boat.dayBasePrice | currency:'EUR'}}/día {{boat.hourBasePrice | currency:'EUR'}}€/hora</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
