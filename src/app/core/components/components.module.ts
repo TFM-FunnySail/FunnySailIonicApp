@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HeaderModule } from "./header/header.module";
 import {ServiceCardModule} from "./service-card/service-card.module";
+import {BoatsFilterModule} from "./boats-filter/boats-filter.module";
 import {ContactModule} from "./contact/contact.module";
 import {CartModule} from "./cart/cart.module";
 
@@ -10,12 +11,14 @@ import {CartModule} from "./cart/cart.module";
     ServiceCardModule,
     ContactModule,
     CartModule,
+    BoatsFilterModule,
   ],
   exports: [
     HeaderModule,
     ServiceCardModule,
     ContactModule,
     CartModule,
+    BoatsFilterModule,
   ]
 })
 export class ComponentsModule {

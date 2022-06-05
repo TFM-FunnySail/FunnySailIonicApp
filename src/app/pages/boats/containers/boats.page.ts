@@ -95,4 +95,7 @@ export class BoatsPage implements OnInit {
       });
   }
 
+  search($event: any) {
+    console.log($event);
+  }
 }

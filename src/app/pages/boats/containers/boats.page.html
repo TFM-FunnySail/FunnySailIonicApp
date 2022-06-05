@@ -1,5 +1,5 @@
 <app-header [title]="'Embarcaciones'"></app-header>
 
 <ion-content [fullscreen]="true">
-
+  <app-boats-filter [title]="'Busque sus embarcaciones'" (search)="search($event)"></app-boats-filter>
 </ion-content>

@@ -5,20 +5,21 @@
   </ion-card-header>
 
   <ion-card-content>
-    <form class="form-inline">
+    <form [formGroup]="form">
       <ion-grid>
         <ion-col>
           <ion-item>
             <ion-label>Desde:</ion-label>
-            <ion-input [(ngModel)]="initialDate" formControlName="initialDate"></ion-input>
-            <ion-button fill="clear" id="open-date-input-2">
+            <ion-input [value]="initialDate" formControlName="initialDate"></ion-input>
+            <ion-button fill="clear" id="open-date-input-1">
               <ion-icon icon="calendar"></ion-icon>
             </ion-button>
             <ion-popover trigger="open-date-input-1" show-backdrop="false">
               <ng-template>
                 <ion-datetime
+                  [min]="minDate"
                   #popoverDatetime1
-                  presentation="datetime"
+                  presentation="date"
                   (ionChange)="initialDate = formatDate(popoverDatetime1.value)"
                 ></ion-datetime>
               </ng-template>
@@ -28,22 +29,23 @@
         <ion-col>
           <ion-item>
           <ion-label>Hasta:</ion-label>
-          <ion-input [(ngModel)]="endDate" formControlName="endDate"></ion-input>
+          <ion-input [value]="endDate" formControlName="endDate"></ion-input>
           <ion-button fill="clear" id="open-date-input-2">
             <ion-icon icon="calendar"></ion-icon>
           </ion-button>
           <ion-popover trigger="open-date-input-2" show-backdrop="false">
             <ng-template>
               <ion-datetime
+                [min]="minDate"
                 #popoverDatetime2
-                presentation="datetime"
+                presentation="date"
                 (ionChange)="endDate = formatDate(popoverDatetime2.value)"
               ></ion-datetime>
             </ng-template>
           </ion-popover>
           </ion-item>
         </ion-col>
-        <ion-col>
+        <ion-col class="ion-margin-top">
           <ion-button color="primary" (click)="onSearch($event)">Buscar</ion-button>
         </ion-col>
       </ion-grid>
