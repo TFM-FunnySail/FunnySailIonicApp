@@ -29,8 +29,8 @@ export class BoatsFilterComponent implements OnInit {
               private formBuilder: FormBuilder,
               protected userService: UsersService) {
     this.form = this.formBuilder.group({
-      initialDate: ['', []],
-      endDate: ['', []],
+      initialDate: ['', [Validators.required]],
+      endDate: ['', [Validators.required]],
     });
 
     this.minDate = new Date(Date.now()).toISOString();
@@ -40,10 +40,12 @@ export class BoatsFilterComponent implements OnInit {
   ngOnInit() {}
 
   onSearch($event: any) {
-    this.search.emit({
-      initialDate:this.reFormatDate(this.initialDate),
-      endDate:this.reFormatDate(this.endDate),
-    });
+    if(!this.form.invalid){
+      this.search.emit({
+        initialDate:this.reFormatDate(this.initialDate),
+        endDate:this.reFormatDate(this.endDate),
+      });
+    }
   }
 
   formatDate(value: string) {
