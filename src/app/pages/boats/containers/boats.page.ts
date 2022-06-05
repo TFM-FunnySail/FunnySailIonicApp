@@ -63,31 +63,6 @@ export class BoatsPage implements OnInit {
     return resp;
   }
 
-  searchAct() {
-    console.log('searchboat')
-    if(this.form.valid) {
-      console.log('isValid')
-      console.log(this.form)
-      let initialDate = undefined;
-      if (this.form.get('initialDate').value) {
-        console.log(this.form.get('initialDate').value)
-        const date = this.form.get('initialDate').value as unknown as Date;
-        initialDate = date.toISOString();
-        this.initDate = date.toISOString();
-      }
-      let endDate = undefined;
-      if (this.form.get('endDate').value) {
-        const date = this.form.get('endDate').value as unknown as Date;
-        endDate = date.toISOString();
-        this.finalDate = endDate;
-      }
-      this.boatsApiService.apiBoatsAvailableBoatsGet(initialDate, endDate).subscribe(resp => {
-        console.log(resp)
-        this.boats = this.handlerBoats(resp).items;
-      });
-    }
-  }
-
   private setBoatTypes() {
     this.boatsApiService.apiBoatsTypesGet()
       .subscribe((resp: BoatTypeOutputDTO[]) => {
@@ -96,6 +71,13 @@ export class BoatsPage implements OnInit {
   }
 
   search($event: any) {
-    console.log($event);
+    const initialDate = $event.initialDate;
+    const endDate = $event.endDate;
+    if(initialDate && initialDate !== '' && endDate && endDate !== ''){
+      this.boatsApiService.apiBoatsAvailableBoatsGet(initialDate, endDate).subscribe(resp => {
+        console.log(resp);
+        this.boats = this.handlerBoats(resp).items;
+      });
+    }
   }
 }
