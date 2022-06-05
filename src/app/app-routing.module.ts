@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {LoginModule} from "./pages/login/login.module";
 import {SignUpPageModule} from "./pages/sign-up/sign-up.module";
+import {HomeModule} from "./pages/home/home.module";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   },
 
 
+  {
+    path: 'home',
+    loadChildren: () => HomeModule
+  },
 ];
 
 @NgModule({

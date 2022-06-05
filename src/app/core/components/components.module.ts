@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { CardMenuModule } from './card-menu/card-menu.module';
+import { CommentModule } from './comment/comment.module';
+import { FooterModule } from './footer/footer.module';
 import { HeaderModule } from "./header/header.module";
 import {ServiceCardModule} from "./service-card/service-card.module";
 import {BoatsFilterModule} from "./boats-filter/boats-filter.module";
@@ -13,7 +16,10 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
     ContactModule,
     CartModule,
     BoatsFilterModule,
-    BoatCardModule
+    BoatCardModule,
+    FooterModule,
+    CardMenuModule,
+    CommentModule,
   ],
   exports: [
     HeaderModule,
@@ -21,7 +27,10 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
     ContactModule,
     CartModule,
     BoatsFilterModule,
-    BoatCardModule
+    BoatCardModule,
+    FooterModule,
+    CardMenuModule,
+    CommentModule,
   ]
 })
 export class ComponentsModule {

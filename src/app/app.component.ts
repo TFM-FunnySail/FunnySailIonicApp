@@ -11,6 +11,7 @@ export class AppComponent {
     { title: 'Embarcaciones', url: '/boats', icon: 'boat' },
     { title: 'Servicios', url: '/services', icon: 'easel' },
     { title: 'Login', url: '/login', icon: 'key' },
+    { title: 'Home', url: 'home', icon: 'home' },
 
   ];
   constructor() {
