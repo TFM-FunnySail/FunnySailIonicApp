@@ -8,11 +8,13 @@ import {BoatsFilterModule} from "./boats-filter/boats-filter.module";
 import {ContactModule} from "./contact/contact.module";
 import {CartModule} from "./cart/cart.module";
 import {BoatCardModule} from "./boat-card/boat-card.module";
+import { ActivityCardModule } from './activity-card/activity-card.module';
 
 @NgModule({
   imports: [
     HeaderModule,
     ServiceCardModule,
+    ActivityCardModule,
     ContactModule,
     CartModule,
     BoatsFilterModule,
@@ -24,6 +26,7 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
   exports: [
     HeaderModule,
     ServiceCardModule,
+    ActivityCardModule,
     ContactModule,
     CartModule,
     BoatsFilterModule,

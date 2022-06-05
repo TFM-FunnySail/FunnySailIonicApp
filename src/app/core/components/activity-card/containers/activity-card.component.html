@@ -1,0 +1,11 @@
+<ion-card [routerLink]="['/activity/' + activity.id]">
+<ion-card-header>
+  <ion-card-title>{{activity.name}}</ion-card-title>
+</ion-card-header>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row><ion-text>{{activity.description}}</ion-text></ion-row>
+      <ion-row class="ion-margin-top"><ion-text>{{activity.price | currency:'EUR'}}</ion-text></ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

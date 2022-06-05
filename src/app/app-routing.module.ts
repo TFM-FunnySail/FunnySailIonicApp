@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'boats',
     loadChildren: () => import('./pages/boats/boats.module').then(m => m.BoatsPageModule)
   },
+  {
+    path: 'activities',
+    loadChildren: () => import('./pages/activities/activities.module').then(m => m.ActivitiesPageModule)
+  },
 
 
   {
