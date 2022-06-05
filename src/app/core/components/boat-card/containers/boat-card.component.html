@@ -1,0 +1,13 @@
+<ion-card [routerLink]="['/boat/' + boat.id]">
+  <ion-card-header>
+    <ion-card-title><a [routerLink]="['/boat/' + boat.id]">{{boat.name}}</a></ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row><ion-text>{{boat.description}}</ion-text></ion-row>
+      <ion-row><ion-text><b>Capacidad:</b>{{boat.capacity}}</ion-text></ion-row>
+      <ion-row><ion-text><b>Longitud:</b>{{boat.length}}</ion-text></ion-row>
+      <ion-row class="ion-margin-top"><ion-text><b>Precio:</b> {{boat.price | currency:'EUR'}}</ion-text></ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
