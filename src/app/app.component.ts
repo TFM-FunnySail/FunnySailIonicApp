@@ -7,12 +7,10 @@ import {Router, RouterEvent} from "@angular/router";
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: '/sign-up', icon: 'home' },
+    { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Embarcaciones', url: '/boats', icon: 'boat' },
     { title: 'Servicios', url: '/services', icon: 'easel' },
     { title: 'Login', url: '/login', icon: 'key' },
-    { title: 'Home', url: 'home', icon: 'home' },
-
   ];
   constructor() {
   }

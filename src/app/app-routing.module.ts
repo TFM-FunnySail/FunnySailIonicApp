@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {LoginModule} from "./pages/login/login.module";
 import {SignUpPageModule} from "./pages/sign-up/sign-up.module";
 import {HomeModule} from "./pages/home/home.module";
+import {ServiceDetailPageModule} from "./pages/service-detail/service-detail.module";
 
 const routes: Routes = [
   {
@@ -24,19 +25,22 @@ const routes: Routes = [
   },
   {
     path: 'service/:id',
-    loadChildren: () => import('./pages/service-detail/service-detail.module').then(m => m.ServiceDetailPageModule)
+    loadChildren: () => ServiceDetailPageModule
   },
   {
     path: 'boats',
     loadChildren: () => import('./pages/boats/boats.module').then(m => m.BoatsPageModule)
   },
-
-
   {
+    path: 'boat',
+    loadChildren: () => import('./pages/boat-detail/boat-detail.module').then(m => m.BoatDetailPageModule)
+  },
+
+
+{
     path: 'home',
     loadChildren: () => HomeModule
-  },
-];
+  },];
 
 @NgModule({
   imports: [

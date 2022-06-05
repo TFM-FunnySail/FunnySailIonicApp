@@ -6,7 +6,7 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let boat of boats;" size="12">
-        <app-boat-card [boat]="boat"></app-boat-card>
+        <app-boat-card [boat]="boat" [initDate]="initialDate" [endDate]="endDate"></app-boat-card>
       </ion-col>
     </ion-row>
   </ion-grid>
