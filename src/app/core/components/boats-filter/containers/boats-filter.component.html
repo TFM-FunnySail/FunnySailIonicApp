@@ -1,0 +1,52 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{title}}</ion-card-title>
+    <ion-card-subtitle>{{subTitle}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <form class="form-inline">
+      <ion-grid>
+        <ion-col>
+          <ion-item>
+            <ion-label>Desde:</ion-label>
+            <ion-input [(ngModel)]="initialDate" formControlName="initialDate"></ion-input>
+            <ion-button fill="clear" id="open-date-input-2">
+              <ion-icon icon="calendar"></ion-icon>
+            </ion-button>
+            <ion-popover trigger="open-date-input-1" show-backdrop="false">
+              <ng-template>
+                <ion-datetime
+                  #popoverDatetime1
+                  presentation="datetime"
+                  (ionChange)="initialDate = formatDate(popoverDatetime1.value)"
+                ></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+          <ion-label>Hasta:</ion-label>
+          <ion-input [(ngModel)]="endDate" formControlName="endDate"></ion-input>
+          <ion-button fill="clear" id="open-date-input-2">
+            <ion-icon icon="calendar"></ion-icon>
+          </ion-button>
+          <ion-popover trigger="open-date-input-2" show-backdrop="false">
+            <ng-template>
+              <ion-datetime
+                #popoverDatetime2
+                presentation="datetime"
+                (ionChange)="endDate = formatDate(popoverDatetime2.value)"
+              ></ion-datetime>
+            </ng-template>
+          </ion-popover>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-button color="primary" (click)="onSearch($event)">Buscar</ion-button>
+        </ion-col>
+      </ion-grid>
+    </form>
+  </ion-card-content>
+</ion-card>
