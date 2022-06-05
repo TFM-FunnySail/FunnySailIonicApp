@@ -17,7 +17,7 @@ export class BookingCartService {
 
   constructor(protected storageService:StorageService) {
     const cartSaved = this.storageService.getItem(this.cartKey);
-    this.cart = JSON.parse(cartSaved  ?? "[]");
+    this.cart = JSON.parse(cartSaved  ?? JSON.stringify(this.cart));
 
     this.cartSubject = new BehaviorSubject<BookingCartModel>(this.cart);
   }
@@ -25,7 +25,7 @@ export class BookingCartService {
   getItemsCount(){
     let count = 0;
 
-    count += this.cart.services.length;
+    count += this.cart.services?.length ?? 0;
     return count;
   }
 
