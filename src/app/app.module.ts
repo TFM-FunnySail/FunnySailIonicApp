@@ -23,7 +23,10 @@ import {CoreModule} from "./core/core.module";
     ReactiveFormsModule,
     CoreModule,
   ],
-  providers: [sdkApiConfigurationProvider,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [sdkApiConfigurationProvider, {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
+  exports: [
+
+  ]
 })
 export class AppModule {}

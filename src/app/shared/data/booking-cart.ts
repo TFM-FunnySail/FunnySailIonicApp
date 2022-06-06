@@ -1,6 +1,14 @@
-import {ServiceOutputDTO,ActivityOutputDTO} from "../sdk";
+import {BoatOutputDTO, ServiceOutputDTO, ActivityOutputDTO} from "../sdk";
 
-export interface BookingCartModel{
-  services: ServiceOutputDTO[],
+interface BoatBookingCartModel{
+  requestCaptain:boolean,
+  initialDate:string,
+  endDate:string,
+  boatData:BoatOutputDTO,
+};
+
+export interface BookingCartModel {
+  services:ServiceOutputDTO[],
+  boats: BoatBookingCartModel[],
   activities: ActivityOutputDTO[],
-}
+};

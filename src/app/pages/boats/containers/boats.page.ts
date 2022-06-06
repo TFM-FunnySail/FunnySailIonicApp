@@ -15,8 +15,8 @@ export class BoatsPage implements OnInit {
   boatTypes: BoatTypeOutputDTO[] = [];
 
   form: any;
-  initDate: string = '';
-  finalDate: string = '';
+  initialDate: string = '';
+  endDate: string = '';
 
   constructor(private formBuilder: FormBuilder,
               protected boatsApiService: BoatsService,
@@ -42,14 +42,17 @@ export class BoatsPage implements OnInit {
       if(parameters['initialDate'] && parameters['initialDate'] !== '')
       {
         initialDate = decodeURIComponent(parameters['initialDate']);
-        console.log(initialDate);
+        console.log('initialDate',initialDate);
         this.form.get('initialDate').setValue(initialDate);
+        this.initialDate = initialDate;
       }
       let endDate = undefined;
       if(parameters['endDate'] && parameters['endDate'] !== '')
       {
         endDate = decodeURIComponent(parameters['endDate']);
+        console.log('endDate',endDate);
         this.form.get('endDate').setValue(endDate);
+        this.endDate = endDate;
       }
       if(initialDate && endDate) {
         this.boatsApiService.apiBoatsAvailableBoatsGet(initialDate, endDate).subscribe(resp => {
@@ -74,6 +77,8 @@ export class BoatsPage implements OnInit {
     const initialDate = $event.initialDate;
     const endDate = $event.endDate;
     if(initialDate && initialDate !== '' && endDate && endDate !== ''){
+      this.initialDate = initialDate;
+      this.endDate = endDate;
       this.boatsApiService.apiBoatsAvailableBoatsGet(initialDate, endDate).subscribe(resp => {
         console.log(resp);
         this.boats = this.handlerBoats(resp).items;
