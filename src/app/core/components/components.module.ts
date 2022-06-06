@@ -8,6 +8,7 @@ import {BoatsFilterModule} from "./boats-filter/boats-filter.module";
 import {ContactModule} from "./contact/contact.module";
 import {CartModule} from "./cart/cart.module";
 import {BoatCardModule} from "./boat-card/boat-card.module";
+import {ServiceCartItemModule} from "./service-cart-item/service-cart-item.module";
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
     FooterModule,
     CardMenuModule,
     CommentModule,
+    ServiceCartItemModule
   ],
   exports: [
     HeaderModule,
@@ -31,6 +33,7 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
     FooterModule,
     CardMenuModule,
     CommentModule,
+    ServiceCartItemModule
   ]
 })
 export class ComponentsModule {

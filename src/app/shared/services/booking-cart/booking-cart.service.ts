@@ -17,8 +17,7 @@ export class BookingCartService {
   protected cartKey = 'bookingCart';
 
   constructor(protected storageService:StorageService) {
-    const cartSaved = this.storageService.getItem(this.cartKey);
-    this.cart = JSON.parse(cartSaved  ?? JSON.stringify(this.cart));
+    this.cart = this.getCart();
 
     this.cartSubject = new BehaviorSubject<BookingCartModel>(this.cart);
   }
@@ -48,7 +47,7 @@ export class BookingCartService {
   }
 
   addBoat(boat:BoatOutputDTO,initialDate:string,endDate:string,requestCaptain:boolean){
-    if(!this.exist(this.cart.services,boat.id)){
+    if(!this.exist(this.cart.boats,boat.id)){
       this.cart.boats.push({
         boatData:boat,
         initialDate,
@@ -59,4 +58,16 @@ export class BookingCartService {
     }
   }
 
+  getCart(){
+    const cartSaved = this.storageService.getItem(this.cartKey);
+    return JSON.parse(cartSaved  ?? JSON.stringify(this.cart));
+  }
+
+  removeService(service: ServiceOutputDTO) {
+    const index = this.cart.services.findIndex(x=>x.id == service.id);
+    if(index >= 0){
+      this.cart.services.splice(index,1);
+      this.saveCart();
+    }
+  }
 }

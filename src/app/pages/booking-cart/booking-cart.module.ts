@@ -15,7 +15,7 @@ import {CoreModule} from "../../core/core.module";
     FormsModule,
     IonicModule,
     BookingCartPageRoutingModule,
-    CoreModule
+    CoreModule,
   ],
   declarations: [BookingCartPage]
 })
