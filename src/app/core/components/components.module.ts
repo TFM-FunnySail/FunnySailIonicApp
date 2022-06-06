@@ -11,6 +11,7 @@ import {BoatCardModule} from "./boat-card/boat-card.module";
 import { ActivityCardModule } from './activity-card/activity-card.module';
 import { CarouselModule } from './carousel/carousel.module';
 import { ChatModule } from './chat/chat.module';
+import { RefundsModule } from './refunds/refunds.module';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { ChatModule } from './chat/chat.module';
     CommentModule,
     CarouselModule,
     ChatModule,
+    RefundsModule,
   ],
   exports: [
     HeaderModule,
@@ -40,6 +42,7 @@ import { ChatModule } from './chat/chat.module';
     CommentModule,
     CarouselModule,
     ChatModule,
+    RefundsModule,
   ]
 })
 export class ComponentsModule {
