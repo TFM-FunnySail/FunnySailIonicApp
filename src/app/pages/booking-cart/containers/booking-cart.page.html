@@ -13,6 +13,16 @@
       </div>
     </ion-list>
     </ion-accordion>
+    <ion-accordion value="activities">
+      <ion-item slot="header">
+        <ion-label color="primary">Actividades</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let activity of bookingCart.activities;">
+          <app-activity-cart-item [activity]="activity" (removeActivity)="removeActivityFromCart($event)"></app-activity-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
     <ion-accordion value="services">
       <ion-item slot="header">
         <ion-label color="primary">Servicios</ion-label>

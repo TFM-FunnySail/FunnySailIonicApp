@@ -12,6 +12,7 @@ import { ActivityCardModule } from './activity-card/activity-card.module';
 import {ServiceCartItemModule} from "./service-cart-item/service-cart-item.module";
 import {BoatCartItemComponent} from "./boat-cart-item/containers/boat-cart-item.component";
 import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
+import {ActivityCartItemModule} from "./activity-cart-item/activity-cart-item.module";
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
     CardMenuModule,
     CommentModule,
     ServiceCartItemModule,
-    BoatCartItemModule
+    BoatCartItemModule,
+    ActivityCartItemModule,
   ],
   exports: [
     HeaderModule,
@@ -40,7 +42,8 @@ import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
     CardMenuModule,
     CommentModule,
     ServiceCartItemModule,
-    BoatCartItemModule
+    BoatCartItemModule,
+    ActivityCartItemModule,
   ]
 })
 export class ComponentsModule {

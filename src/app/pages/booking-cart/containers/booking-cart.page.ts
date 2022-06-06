@@ -31,4 +31,9 @@ export class BookingCartPage implements OnInit {
     this.bookingCartService.removeBoat(boat);
     this.updateBookingCart();
   }
+
+  removeActivityFromCart(activity){
+    this.bookingCartService.removeActivity(activity);
+    this.updateBookingCart();
+  }
 }

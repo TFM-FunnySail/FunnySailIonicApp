@@ -87,4 +87,12 @@ export class BookingCartService {
       this.saveCart();
     }
   }
+
+  removeActivity(activity: ActivityOutputDTO) {
+    const index = this.cart.activities.findIndex(x=>x.id == activity.id);
+    if(index >= 0){
+      this.cart.activities.splice(index,1);
+      this.saveCart();
+    }
+  }
 }

@@ -4,6 +4,7 @@ import {LoginModule} from "./pages/login/login.module";
 import {SignUpPageModule} from "./pages/sign-up/sign-up.module";
 import { ServiceDetailPageModule } from "./pages/service-detail/service-detail.module";
 import {BookingCartPageModule} from "./pages/booking-cart/booking-cart.module";
+// @ts-ignore
 import {HomePageModule} from "./pages/home/home.module";
 
 const routes: Routes = [
