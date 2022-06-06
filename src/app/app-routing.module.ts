@@ -53,6 +53,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule),
     canActivate: [AuthGuard],
   },
+  {
+    path: 'refunds-booking',
+    loadChildren: () => import('./pages/refunds-booking/refunds-booking.module').then(m => m.RefundsBookingPageModule),
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

@@ -13,6 +13,7 @@ export class AppComponent {
     { title: 'Login', url: '/login', icon: 'key' },
     { title: 'Actividades', url: '/activities', icon: 'fish' },
     { title: 'Perfil', url: '/profile', icon: 'person'},
+    { title: 'Devoluciones y pedidos', url: '/refunds-booking', icon: 'calendar'}
   ];
   constructor() {
   }
