@@ -21,7 +21,7 @@ export class BoatCartItemComponent implements OnInit {
   ngOnInit() {}
 
   removeBoatFromCart(){
-    this.removeBoat.emit(this.boatBooking);
+    this.removeBoat.emit(this.boatBooking.boatData);
   }
 
   getImage() {
