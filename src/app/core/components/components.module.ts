@@ -10,6 +10,7 @@ import {CartModule} from "./cart/cart.module";
 import {BoatCardModule} from "./boat-card/boat-card.module";
 import { ActivityCardModule } from './activity-card/activity-card.module';
 import { CarouselModule } from './carousel/carousel.module';
+import { ChatModule } from './chat/chat.module';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { CarouselModule } from './carousel/carousel.module';
     CardMenuModule,
     CommentModule,
     CarouselModule,
+    ChatModule,
   ],
   exports: [
     HeaderModule,
@@ -37,6 +39,7 @@ import { CarouselModule } from './carousel/carousel.module';
     CardMenuModule,
     CommentModule,
     CarouselModule,
+    ChatModule,
   ]
 })
 export class ComponentsModule {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-footer',
@@ -7,18 +7,17 @@ import { FormBuilder } from "@angular/forms";
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  form: any;
+  languageForm: any;
 
   //private translateService: agregar TranslateService al constructor
-  constructor(
-    private formBuilder: FormBuilder) {
-
+  constructor(private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
+    this.languageForm = this.formBuilder.group({
       language: ['']
     });
+    
     /*
     this.form.get('language').valueChanges.subscribe(() => {
       console.log('algo');
