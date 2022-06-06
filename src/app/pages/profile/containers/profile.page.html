@@ -1,0 +1,167 @@
+<app-header [title]="'Perfil'"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid style="background-image: url('assets/port.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; text-align:center">
+    <ion-row style="justify-content: center;">
+      <img src="assets/user.png" alt="profile picture" class="img-circle" style="width: 15%; margin: 1.5%;">
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h2 class="ion-text-center"><b>{{user.name}} {{user.lastName}}</b></h2>
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <h3><b>Información personal</b></h3>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button color="primary" (click)="show_form()" id="editButton">
+              <ion-icon name="pencil-outline" style="margin-right:5px"></ion-icon> editar
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button color="primary" (click)="save_form()" id="saveButton" style="display: none">
+              <ion-icon name="save-outline" style="margin-right:5px"></ion-icon> guardar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <hr>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="name">Nombre</ion-label>
+              <ion-input name="name" placeholder="Nombre" type="text"
+                         id="name"
+                         formControlName="name"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="lastName">Apellidos</ion-label>
+              <ion-input name="lastName" placeholder="Apellidos" type="text"
+                         id="lastName"
+                         formControlName="lastName"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="email">Email</ion-label>
+              <ion-input name="email" placeholder="Email" type="text"
+                         id="email"
+                         formControlName="email"></ion-input>
+            </ion-item>
+          </ion-col>
+          <!--
+    <ion-col size="12">
+      <ion-item>
+        <ion-label position="floating" for="birthday">Fecha de nacimiento</ion-label>
+        <ion-input [value]="birthday" formControlName="birthday"></ion-input>
+        <ion-button fill="clear" id="open-date-input-1">
+          <ion-icon icon="calendar"></ion-icon>
+        </ion-button>
+        <ion-popover trigger="open-date-input-1" show-backdrop="false">
+          <ng-template>
+            <ion-datetime [min]="minDate"
+                          #popoverDatetime1
+                          presentation="date"
+                          (ionChange)="birthday = formatDate(popoverDatetime1.value)"></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </ion-col>
+    -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="phone">Teléfono</ion-label>
+              <ion-input name="phone" placeholder="Teléfono" type="text"
+                         id="phone"
+                         formControlName="phone"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="3">
+            <change-password-card></change-password-card>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <h3><b>Dirección</b></h3>
+          </ion-col>
+        </ion-row>
+        <hr>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="address">Dirección</ion-label>
+              <ion-input name="address" placeholder="Dirección" type="text"
+                         id="address"
+                         formControlName="address"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="city">Ciudad</ion-label>
+              <ion-input name="city" placeholder="Ciudad" type="text"
+                         id="city"
+                         formControlName="city"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="zip">Código postal</ion-label>
+              <ion-input name="zip" placeholder="Código postal" type="text"
+                         id="zip"
+                         formControlName="zip"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="country">Pais</ion-label>
+              <ion-input name="country" placeholder="Pais" type="text"
+                         id="country"
+                         formControlName="country"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" for="state">Comunidad</ion-label>
+              <ion-input name="state" placeholder="Comunidad" type="text"
+                         id="state"
+                         formControlName="state"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <h3><b>Barcos</b></h3>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button color="primary" [routerLink]="['/create-boat']">
+              crear barco
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <hr>
+
+        <ion-row>
+          <ion-col size="12" style="margin-top:20px; padding-bottom: 50px;">
+            <ion-button color="danger" (click)="logout()">Cerrar sesión</ion-button>
+          </ion-col>
+        </ion-row>
+</ion-grid>
+    </form>
+  </ion-grid>
+
+</ion-content>
+
+<app-footer></app-footer>
