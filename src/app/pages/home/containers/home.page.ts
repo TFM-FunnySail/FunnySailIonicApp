@@ -4,10 +4,10 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomePage implements OnInit {
 
   form: any;
   linksMenus: any[] = [
@@ -55,20 +55,22 @@ export class HomeComponent implements OnInit {
       comment: 'Random comment'
     }
   ];
-  constructor(private router: Router, private formBuilder: FormBuilder,) { }
+  constructor(private router: Router, private formBuilder: FormBuilder,) {
 
-  ngOnInit(): void {
     this.form = this.formBuilder.group({
       initialDate: ['', Validators.required],
       endDate: ['', Validators.required]
     });
   }
 
+  ngOnInit(): void {
+  
+  }
+
   search($event: any) {
 
     const initialDate = $event.initialDate;
     const endDate = $event.endDate;
-
     this.router.navigate(['/boats'], { queryParams: { initialDate, endDate } });
   }
 

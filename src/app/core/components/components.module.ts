@@ -8,6 +8,7 @@ import {BoatsFilterModule} from "./boats-filter/boats-filter.module";
 import {ContactModule} from "./contact/contact.module";
 import {CartModule} from "./cart/cart.module";
 import {BoatCardModule} from "./boat-card/boat-card.module";
+import { ActivityCardModule } from './activity-card/activity-card.module';
 import {ServiceCartItemModule} from "./service-cart-item/service-cart-item.module";
 import {BoatCartItemComponent} from "./boat-cart-item/containers/boat-cart-item.component";
 import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
@@ -16,6 +17,7 @@ import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
   imports: [
     HeaderModule,
     ServiceCardModule,
+    ActivityCardModule,
     ContactModule,
     CartModule,
     BoatsFilterModule,
@@ -29,6 +31,7 @@ import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
   exports: [
     HeaderModule,
     ServiceCardModule,
+    ActivityCardModule,
     ContactModule,
     CartModule,
     BoatsFilterModule,
