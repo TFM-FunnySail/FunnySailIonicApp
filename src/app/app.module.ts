@@ -8,8 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {sdkApiConfigurationProvider} from './shared/sdkApiConfigurationFactory';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
+import {AppHttpInterceptor} from "./shared/interceptors/app-http.interceptor";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,12 @@ import {CoreModule} from "./core/core.module";
     ReactiveFormsModule,
     CoreModule,
   ],
-  providers: [sdkApiConfigurationProvider, {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [sdkApiConfigurationProvider, {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppHttpInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent],
   exports: [
 
