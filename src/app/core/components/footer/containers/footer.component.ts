@@ -9,12 +9,23 @@ import { FormBuilder } from "@angular/forms";
 export class FooterComponent implements OnInit {
   form: any;
 
-  constructor() {
+  //private translateService: agregar TranslateService al constructor
+  constructor(
+    private formBuilder: FormBuilder) {
 
   }
 
   ngOnInit(): void {
-
+    this.form = this.formBuilder.group({
+      language: ['']
+    });
+    /*
+    this.form.get('language').valueChanges.subscribe(() => {
+      console.log('algo');
+      this.translateService.use(this.form.get('language').value);
+      this.translateService.setDefaultLang(this.form.get('language').value);
+    });
+    */
   }
 
 }
