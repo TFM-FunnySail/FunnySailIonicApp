@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title [routerLink]="['']" class="ion-align-self-auto">
-      <img src="./assets/logoTFM.png" width="30" alt="" class="d-inline-block align-middle mr-2" style="filter: invert(100);">
-      <ion-text>{{title}}</ion-text>
+    <ion-title class="ion-align-self-auto">
+      <img [routerLink]="['']" src="./assets/logoTFM.png" width="30" alt="" class="d-inline-block align-middle mr-2" style="filter: invert(100);">
+      <ion-text [routerLink]="['']">{{title}}</ion-text>
       <app-cart class="ion-float-end ion-wrap-reverse"></app-cart>
     </ion-title>
 
