@@ -9,6 +9,8 @@ import {ContactModule} from "./contact/contact.module";
 import {CartModule} from "./cart/cart.module";
 import {BoatCardModule} from "./boat-card/boat-card.module";
 import {ServiceCartItemModule} from "./service-cart-item/service-cart-item.module";
+import {BoatCartItemComponent} from "./boat-cart-item/containers/boat-cart-item.component";
+import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
 
 @NgModule({
   imports: [
@@ -21,7 +23,8 @@ import {ServiceCartItemModule} from "./service-cart-item/service-cart-item.modul
     FooterModule,
     CardMenuModule,
     CommentModule,
-    ServiceCartItemModule
+    ServiceCartItemModule,
+    BoatCartItemModule
   ],
   exports: [
     HeaderModule,
@@ -33,7 +36,8 @@ import {ServiceCartItemModule} from "./service-cart-item/service-cart-item.modul
     FooterModule,
     CardMenuModule,
     CommentModule,
-    ServiceCartItemModule
+    ServiceCartItemModule,
+    BoatCartItemModule
   ]
 })
 export class ComponentsModule {

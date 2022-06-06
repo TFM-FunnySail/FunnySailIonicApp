@@ -1,6 +1,6 @@
 import {BoatOutputDTO, ServiceOutputDTO} from "../sdk";
 
-interface BoatBookingCartModel{
+export interface BoatBookingCartModel{
   requestCaptain:boolean,
   initialDate:string,
   endDate:string,

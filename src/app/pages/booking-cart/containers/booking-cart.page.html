@@ -2,23 +2,20 @@
 
 <ion-content [fullscreen]="true">
   <!-- Custom Icon -->
-  <ion-accordion-group [multiple]="true" [value]="['boats', 'services']">
-    <ion-title class="ion-margin-top ion-text-center">
-      Resumen
-    </ion-title>
+  <ion-accordion-group class="ion-margin-top" [multiple]="true" [value]="['boats', 'services']">
     <ion-accordion value="boats">
       <ion-item slot="header">
-        <ion-label>Embarcaciones</ion-label>
+        <ion-label color="primary">Embarcaciones</ion-label>
       </ion-item>
     <ion-list slot="content">
-      <ion-item>
-        <ion-label>Pokémon Yellow</ion-label>
-      </ion-item>
+      <div *ngFor="let boat of bookingCart.boats;">
+        <app-boat-cart-item [boatBooking]="boat" (removeBoat)="removeBoatFromCart($event)"></app-boat-cart-item>
+      </div>
     </ion-list>
     </ion-accordion>
     <ion-accordion value="services">
       <ion-item slot="header">
-        <ion-label>Servicios</ion-label>
+        <ion-label color="primary">Servicios</ion-label>
       </ion-item>
       <ion-list slot="content">
         <div *ngFor="let service of bookingCart.services;">
