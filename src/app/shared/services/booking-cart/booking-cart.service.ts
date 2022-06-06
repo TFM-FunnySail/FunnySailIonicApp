@@ -95,4 +95,13 @@ export class BookingCartService {
       this.saveCart();
     }
   }
+
+  cleanCart(){
+    this.cart = {
+      services: [],
+      boats: [],
+      activities: [],
+    };
+    this.saveCart();
+  }
 }
