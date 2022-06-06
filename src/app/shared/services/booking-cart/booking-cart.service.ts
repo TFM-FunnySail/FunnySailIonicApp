@@ -70,4 +70,12 @@ export class BookingCartService {
       this.saveCart();
     }
   }
+
+  removeBoat(boat: BoatOutputDTO) {
+    const index = this.cart.boats.findIndex(x=>x.boatData.id == boat.id);
+    if(index >= 0){
+      this.cart.boats.splice(index,1);
+      this.saveCart();
+    }
+  }
 }

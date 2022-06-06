@@ -26,4 +26,9 @@ export class BookingCartPage implements OnInit {
   updateBookingCart(){
     this.bookingCart = this.bookingCartService.getCart();
   }
+
+  removeBoatFromCart(boat){
+    this.bookingCartService.removeBoat(boat);
+    this.updateBookingCart();
+  }
 }
