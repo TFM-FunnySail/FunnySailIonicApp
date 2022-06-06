@@ -1,5 +1,6 @@
-import {ServiceOutputDTO} from "../sdk";
+import {ServiceOutputDTO,ActivityOutputDTO} from "../sdk";
 
 export interface BookingCartModel{
-  services:ServiceOutputDTO[]
+  services: ServiceOutputDTO[],
+  activities: ActivityOutputDTO[],
 }

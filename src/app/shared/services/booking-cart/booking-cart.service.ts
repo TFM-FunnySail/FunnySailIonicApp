@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {StorageService} from "../storage/storage.service";
-import {BookingCartModel} from "../../data/booking-cart";
-import {ServiceOutputDTO} from "../../sdk";
+import { BookingCartModel } from "../../data/booking-cart";
+import { ServiceOutputDTO, ActivityOutputDTO } from "../../sdk";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ import {ServiceOutputDTO} from "../../sdk";
 export class BookingCartService {
 
   protected cart: BookingCartModel = {
-    services:[]
+    services: [],
+    activities:[],
   };
   public cartSubject: BehaviorSubject<BookingCartModel>;
   protected cartKey = 'bookingCart';
@@ -26,12 +27,20 @@ export class BookingCartService {
     let count = 0;
 
     count += this.cart.services?.length ?? 0;
+    count += this.cart.activities?.length ?? 0;
     return count;
   }
 
   addService(service:ServiceOutputDTO){
     if(!this.exist(this.cart.services,service.id)){
       this.cart.services.push(service);
+      this.saveCart();
+    }
+  }
+
+  addActivity(activity: ActivityOutputDTO) {
+    if (!this.exist(this.cart.activities, activity.id)) {
+      this.cart.activities.push(activity);
       this.saveCart();
     }
   }

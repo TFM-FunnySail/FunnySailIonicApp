@@ -43,7 +43,7 @@ export class ActivityDetailPage implements OnInit {
   booking(){
     const id = this.activity.id;
     if (id) {
-      this.bookingCartService.addService(this.activity);
+      this.bookingCartService.addActivity(this.activity);
       this.router.navigate(['activities']);
     }
   }
