@@ -1,0 +1,55 @@
+<app-header [title]="'Carrito'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Custom Icon -->
+  <ion-accordion-group class="ion-margin-top" [multiple]="true" [value]="['boats', 'services','activities']">
+    <ion-accordion value="boats">
+      <ion-item slot="header">
+        <ion-label color="primary">Embarcaciones</ion-label>
+      </ion-item>
+    <ion-list slot="content">
+      <div *ngFor="let boat of bookingCart.boats;">
+        <app-boat-cart-item [boatBooking]="boat" (removeBoat)="removeBoatFromCart($event)"></app-boat-cart-item>
+      </div>
+    </ion-list>
+    </ion-accordion>
+    <ion-accordion value="activities">
+      <ion-item slot="header">
+        <ion-label color="primary">Actividades</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let activity of bookingCart.activities;">
+          <app-activity-cart-item [activity]="activity" (removeActivity)="removeActivityFromCart($event)"></app-activity-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+    <ion-accordion value="services">
+      <ion-item slot="header">
+        <ion-label color="primary">Servicios</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let service of bookingCart.services;">
+          <app-service-cart-item [service]="service" (removeService)="removeServiceFromCart($event)"></app-service-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-item color="warning">
+    <ion-label>Total:</ion-label>
+    <ion-text>{{total | currency:'EUR'}}</ion-text>
+  </ion-item>
+  <form [formGroup]="form" style="border:none;">
+    <ion-item class="ion-margin-top">
+      <ion-label>Total de personas</ion-label>
+      <ion-input type="text" min="1" formControlName="totalPeople"></ion-input>
+    </ion-item>
+    <ion-text color="danger">
+      <h5>{{error}}</h5>
+    </ion-text>
+    <div class="ion-text-center">
+      <ion-button class="ion-margin-top " color="primary" (click)="booking()">Reservar</ion-button>
+    </div>
+
+  </form>
+
+</ion-content>
