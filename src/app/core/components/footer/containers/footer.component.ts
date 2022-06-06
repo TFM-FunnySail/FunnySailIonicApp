@@ -7,8 +7,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  languageForm: any;
-
+  languageForm: FormGroup;
+  language: any;
   //private translateService: agregar TranslateService al constructor
   constructor(private formBuilder: FormBuilder) {
   }
