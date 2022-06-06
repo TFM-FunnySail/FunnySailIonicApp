@@ -1,13 +1,33 @@
-<ion-footer>
+<ion-footer >
   <ion-toolbar>
    
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <p class="text-white">FunnySail</p>
-          <p class="text-white"> Copyright &copy; 2021 </p>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <chat></chat>
+            <p class="text-white">FunnySail</p>
+            <p class="text-white"> Copyright &copy; 2021 </p>
+            <form [formGroup]="languageForm">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="12" offset="4">
+                    <ion-item class="center">
+                      <ion-label position="floating" for="language">Idioma</ion-label>
+                      <ion-select name="language" placeholder="Idioma"
+                                  id="language"
+                                  formControlName="language">
+                        <ion-select-option value="es">Español</ion-select-option>
+                        <ion-select-option value="en">Ingles</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </form>
+          </div>
         </div>
+
       </div>
-    </div>
+    
   </ion-toolbar>
 </ion-footer>

@@ -4,13 +4,10 @@
     "\\app",
     "\\app\\core",
     "\\app\\core\\components",
-    "\\app\\core\\components\\carousel",
-    "\\app\\core\\components\\carousel\\containers",
     "\\app\\pages",
     "\\app\\pages\\home",
     "\\app\\pages\\home\\containers",
     "\\app\\shared"
   ],
-  "SelectedNode": "\\app\\core\\components\\carousel\\carousel.module.ts",
   "PreviewInSolutionExplorer": false
 }

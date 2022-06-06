@@ -6,6 +6,7 @@ import { ServiceDetailPageModule } from "./pages/service-detail/service-detail.m
 import {BookingCartPageModule} from "./pages/booking-cart/booking-cart.module";
 // @ts-ignore
 import {HomePageModule} from "./pages/home/home.module";
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -50,7 +51,13 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'refunds-booking',
+    loadChildren: () => import('./pages/refunds-booking/refunds-booking.module').then(m => m.RefundsBookingPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: '',

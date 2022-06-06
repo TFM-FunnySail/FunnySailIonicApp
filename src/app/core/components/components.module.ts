@@ -13,6 +13,9 @@ import {ServiceCartItemModule} from "./service-cart-item/service-cart-item.modul
 import {BoatCartItemComponent} from "./boat-cart-item/containers/boat-cart-item.component";
 import {BoatCartItemModule} from "./boat-cart-item/boat-cart-item.module";
 import {ActivityCartItemModule} from "./activity-cart-item/activity-cart-item.module";
+import { CarouselModule } from './carousel/carousel.module';
+import { ChatModule } from './chat/chat.module';
+import { RefundsModule } from './refunds/refunds.module';
 
 @NgModule({
   imports: [
@@ -29,6 +32,9 @@ import {ActivityCartItemModule} from "./activity-cart-item/activity-cart-item.mo
     ServiceCartItemModule,
     BoatCartItemModule,
     ActivityCartItemModule,
+    CarouselModule,
+    ChatModule,
+    RefundsModule,
   ],
   exports: [
     HeaderModule,
@@ -44,6 +50,9 @@ import {ActivityCartItemModule} from "./activity-cart-item/activity-cart-item.mo
     ServiceCartItemModule,
     BoatCartItemModule,
     ActivityCartItemModule,
+    CarouselModule,
+    ChatModule,
+    RefundsModule,
   ]
 })
 export class ComponentsModule {
