@@ -1,7 +1,7 @@
-<app-header [title]="'Embarcaciones'"></app-header>
+<app-header [title]="'boat.title'"></app-header>
 
 <ion-content [fullscreen]="true">
-  <app-boats-filter [title]="'Busque sus embarcaciones'" (search)="search($event)"
+  <app-boats-filter [title]="'boat.titleFilters'" (search)="search($event)"
                     [initialDateInput]="initialDate" [endDateInput]="endDate"></app-boats-filter>
 
   <ion-grid>

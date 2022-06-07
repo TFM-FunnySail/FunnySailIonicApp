@@ -32,6 +32,10 @@
     "title": "Actividad",
     "button": "Reservar"
   },
+  "boat":{
+    "title": "Embarcaciones",
+    "titleFilters": "Busque sus embarcaciones"
+  },
   "boatDetail": {
     "title": "Detalles",
     "people": "Personas",
