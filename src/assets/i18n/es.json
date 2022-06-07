@@ -29,6 +29,7 @@
     }
   },
   "activityDetail": {
+    "title": "Actividad",
     "button": "Reservar"
   }
 }
