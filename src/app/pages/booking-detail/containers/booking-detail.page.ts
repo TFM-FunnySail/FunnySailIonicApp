@@ -63,7 +63,7 @@ export class BookingDetailPage implements OnInit {
   }
 
   async pay() {
-
+    await this.presentAlertPrompt();
   }
 
   async cancelAlertConfirm() {
@@ -107,5 +107,66 @@ export class BookingDetailPage implements OnInit {
   private handlerStatus(resp: BookingOutputDTO) {
     this.canBeCanceled = resp.status !== 'Cancelled' && resp.status !== 'Completed';
     this.canBePaid = resp.status !== 'Cancelled' && !resp.paid;
+  }
+
+  async presentAlertPrompt() {
+    const alert = await this.alertController.create({
+      cssClass: '',
+      header: 'Datos de pagos',
+      inputs: [
+        {
+          name: 'Tarjeta',
+          type: 'text',
+          placeholder: 'xxxx xxxx xxxx xxxx',
+        },
+        {
+          name: 'CVV',
+          type: 'text',
+          placeholder: 'cvv',
+          attributes:{
+            maxLength:4,
+            minLength:3,
+          }
+        },
+        {
+          name: 'Expiración',
+          type: 'text',
+          placeholder: '05/26',
+          attributes:{
+            maxLength:5,
+            minLength:5,
+          }
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Pagar',
+          handler: (resp) => {
+            console.log('Confirm Ok',resp);
+            this.payOrder();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  private payOrder() {
+    this.bookingService.apiBookingIdPayPut(this.id).subscribe(resp=>{
+      console.log(resp);
+      this.booking.paid = true;
+      this.booking.status = 'Rented';
+      this.handlerStatus(this.booking);
+    },err=>{
+      console.log(err);
+    })
   }
 }
