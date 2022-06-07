@@ -1,0 +1,43 @@
+<app-header [title]="'Reserva'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-title>
+    ID: {{id}}
+  </ion-title>
+  <ion-accordion-group class="ion-margin-top" [multiple]="true" [value]="['boats', 'services','activities']">
+    <ion-accordion value="boats">
+      <ion-item slot="header">
+        <ion-label color="primary">Embarcaciones</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let boat of boatsBooking;">
+          <app-boat-cart-item [boatBooking]="boat"></app-boat-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+    <ion-accordion value="activities">
+      <ion-item slot="header">
+        <ion-label color="primary">Actividades</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let activity of booking.activyBookings;">
+          <app-activity-cart-item [activity]="activity"></app-activity-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+    <ion-accordion value="services">
+      <ion-item slot="header">
+        <ion-label color="primary">Servicios</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let service of booking.serviceBookings;">
+          <app-service-cart-item [service]="service"></app-service-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-item color="warning">
+    <ion-label>Total:</ion-label>
+    <ion-text>{{totalAmount | currency:'EUR'}}</ion-text>
+  </ion-item>
+</ion-content>

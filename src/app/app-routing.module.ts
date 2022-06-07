@@ -64,6 +64,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'booking/:id',
+    loadChildren: () => import('./pages/booking-detail/booking-detail.module').then(m => m.BookingDetailPageModule)
+  },
+
 ];
 
 @NgModule({
