@@ -1,1 +1,176 @@
+{
+  "home": {
+    "title": "The best solution to rent a boat!",
+    "subtitle": "More than 40,000 boats to rent at the best price and worldwide.",
+    "owner": {
+      "title": "Owner",
+      "paragraph1": "Create a free listing to rent your boat. Boats, zodiacs, boats, catamarans, all are welcome at FunnySail! ",
+      "paragraph2": "Rent to whoever you want, when you want and at the price you see fit. Click&Boat helps you to make your boat profitable by allowing you to cover the costs of maintenance and use.",
+      "paragraph3": "Optional comprehensive insurance of up to eight million euros of coverage and secure payment platform for the bond. Entrust us with the rental of your sailboat, motor boat or catamaran.",
+      "button" : "Rent your boat"
+    },
+    "lessee": {
+      "title": "Lessee",
+      "paragraph1": "Queries all ads through the search engine. Find a boat or sailboat for rent anywhere in Europe and at the best price. Enjoy our insurance included to rent and browse safely.",
+      "paragraph2": "Contact the owners of the boats free of charge and ask them about questions related to the boat: availability, equipment, etc. through the built-in courier service.",
+      "paragraph3": "Book directly online with total security and rent the boat or sailboat of your dreams in just a few clicks. You will only be charged if the boat owner accepts your rental request. 100% secure payment. Click&Boat is your trusted intermediary.",
+      "button": "Find your boat"
+    },
+    "insurance": {
+      "title": "Browse safely"
+    }
+  },
+  "activities": {
+    "form": {
+      "name" : "Name",
+      "priceMin": "Price Min.",
+      "priceMax": "Max Price.",
+      "button": "search"
+    }
+  },
+  "activityDetail": {
+    "title": "Activity",
+    "button": "Book"
+  },
+  "boat":{
+    "title": "Boats",
+    "titleFilters": "Find your boats"
+  },
+  "boatDetail": {
+    "title": "Details",
+    "people": "People",
+    "length": "Length",
+    "sleeve": "Manga",
+    "motorPower": "Power",
+    "price": "(price according to selected date)",
+    "button": "Book"
+  },
+  "boatFilters": {
+    "form": {
+      "since": "From :",
+      "ago": "Until :",
+      "button": "Search"
+    }
+  },
+  "boatCard": {
+    "capacity": "Capacity:",
+    "people": "People",
+    "length": "Length:",
+    "price": "Price:"
+  },
+  "bookingCart": {
+    "title": "Cart",
+    "boats": "Boats",
+    "activities": "Activities",
+    "services": "Services",
+    "people": "People with me:",
+    "button": "Book",
+    "total": "Total:"
+  },
+  "bookingCartItem": {
+    "since": "From :",
+    "ago": "Until :"
+  },
+  "bookingDetail": {
+    "title": "Reserve",
+    "id": "ID:",
+    "dateBuy": "Purchase date:",
+    "paid": "Paid:",
+    "status": "State:",
+    "totalPeople" : "Total people:",
+    "boats": "Boats",
+    "activities": "Activities",
+    "services": "Services",
+    "total": "Total:",
+    "cancel": "Cancel",
+    "pay": "Pay"
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Please enter your details",
+    "email": "Email",
+    "password": "Password",
+    "logIn": "Log in",
+    "signup": "Register"
+  },
+  "profile": {
+    "title": "Profile",
+    "personalInfo": "Personal Information",
+    "edit": "Edit",
+    "save": "Save",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "birthday": "Date of birth",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "country": "Country",
+    "community": "Community",
+    "boats": "Boats",
+    "crateBoat": "Create boat",
+    "logOut": "Log Out"
+  },
+  "refundsBooking":{
+    "title": "Returns and orders",
+    "orders": "My orders",
+    "refunds": "My returns",
+    "noOrders": "You have no reservations",
+    "noRefunds": "You have no returns"
+  },
+  "serviceDetail": {
+    "title": "Service",
+    "button": "Book"
+  },
+  "services": {
+    "title": "Services",
+    "name": "Name",
+    "priceMin": "Price Min.",
+    "priceMax": "Max Price.",
+    "button": "Search"
+  },
+  "signup": {
+    "title": "Registration",
+    "credentials": "Credentials",
+    "personalData": "Personal Data",
+    "address": "Address",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "surname": "Surname",
+    "birthday": "Date of birth",
+    "phone": "Phone",
+    "city": "City",
+    "province": "Province",
+    "postalCode": "Postal Code",
+    "country": "Country",
+    "button": "Register"
+  },
+  "chat": {
+    "title": "Chat",
+    "message": "Message",
+    "send": "Send",
+    "close": "Close"
+  },
+  "contactUs": {
+    "title": "Our contact:",
+    "phone": "Phone:",
+    "email": "Email",
+    "company": "Company:",
+    "schedule": "Schedule:"
+  },
+  "footer": {
+    "language": "Language",
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "refunds": {
+    "date": "Date:",
+    "description": "Description:",
+    "amountToReturn": "Amount to be returned:",
+    "price": "Price:"
+  }
+}
 
