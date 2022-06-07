@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { format, parseISO } from "date-fns";
 import { Router } from "@angular/router";
 import {
   UserOutputDTO,
   UsersService,
   EditUserInputDTO, BoatsService
 } from "../../../shared/sdk";
-
+import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
 import { StorageService } from "../../../shared/services/storage/storage.service";
 import { AuthService } from "../../../shared/services/auth/auth.service";
 
@@ -21,6 +20,7 @@ export class ProfilePage implements OnInit {
   user: any = {};
   userData: UserOutputDTO;
   minDate: any;
+  dateValue2: any;
 
   constructor(private router: Router,
     private formBuilder: FormBuilder,
@@ -34,7 +34,7 @@ export class ProfilePage implements OnInit {
       password: ['', [Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,25}$')]],
       confirmPassword: ['', [Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,25}$')]],*/
       lastName: ['', [Validators.minLength(3), Validators.maxLength(20)]],
-      birthday: ['', []],
+      birthDay: ['', []],
       phone: ['', [Validators.pattern('^[0-9]{10}$')]],
       identification: ['', [Validators.pattern('^[0-9A-Z]{10}$')]],
       address: ['', [Validators.minLength(3), Validators.maxLength(50)]],
@@ -47,8 +47,6 @@ export class ProfilePage implements OnInit {
     this.dataForm.disable();
     this.checkBoats();
     this.minDate = new Date(Date.now()).toISOString();
-
-    console.log(this.minDate);
   }
 
   ngOnInit(): void {
@@ -66,7 +64,7 @@ export class ProfilePage implements OnInit {
           this.dataForm.get(['lastName'])?.setValue(resp.lastName);
           this.dataForm.get(['email'])?.setValue(resp.email);
           this.dataForm.get(['phone'])?.setValue(resp.phoneNumber);
-          this.dataForm.get(['birthday'])?.setValue(resp.birthDay?.split('T')[0]);
+          this.dataForm.get(['birthDay'])?.setValue(resp.birthDay?.split('T')[0]);
           this.dataForm.get(['address'])?.setValue(resp.address);
           this.dataForm.get(['city'])?.setValue(resp.city);
           this.dataForm.get(['state'])?.setValue(resp.state);
@@ -112,10 +110,13 @@ export class ProfilePage implements OnInit {
     }
 
     if (this.userData.birthDay != this.dataForm.value.birthday + "T00:00:00") {
-      datosActualizados.birthDay = this.dataForm.value.birthday;
+      this.dataForm.value.birthDay = this.reFormatDate(this.dataForm.value.birthDay);
+      datosActualizados.birthDay = this.dataForm.value.birthDay;
     } else {
       datosActualizados.birthDay = this.userData.birthDay;
     }
+
+
 
     if (this.userData.phoneNumber != this.dataForm.value.phone) {
       datosActualizados.phoneNumber = this.dataForm.value.phone;
