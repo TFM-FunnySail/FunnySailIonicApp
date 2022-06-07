@@ -27,5 +27,8 @@
       "priceMax": "Precio Max.",
       "button": "search"
     }
+  },
+  "activityDetail": {
+    "button": "Reservar"
   }
 }
