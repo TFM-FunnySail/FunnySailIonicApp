@@ -1,0 +1,72 @@
+<app-header [title]="'Reserva'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-title class="ion-margin-top">
+    ID: {{id}}
+  </ion-title>
+  <ion-item>
+    <ion-label>Fecha de compra:</ion-label>
+    <ion-text>{{formatDate(booking?.createdDate)}}</ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-label>Pagada:</ion-label>
+    <ion-text>{{booking?.paid ? 'Si':'No'}}</ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-label>Estado:</ion-label>
+    <ion-badge color="danger" *ngIf="booking?.status === 'Cancelled'">{{booking?.status}}</ion-badge>
+    <ion-badge color="secondary" *ngIf="booking?.status !== 'Cancelled'">{{booking?.status}}</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-label>Total de personas:</ion-label>
+    <ion-text>{{booking?.totalPeople}}</ion-text>
+  </ion-item>
+  <ion-accordion-group class="ion-margin-top" [multiple]="true" [value]="['boats', 'services','activities']">
+    <ion-accordion value="boats">
+      <ion-item slot="header">
+        <ion-label color="primary">Embarcaciones</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let boat of boatsBooking;">
+          <app-boat-cart-item [boatBooking]="boat" [remove]="false"></app-boat-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+    <ion-accordion value="activities">
+      <ion-item slot="header">
+        <ion-label color="primary">Actividades</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let activity of booking.activyBookings;">
+          <app-activity-cart-item [activity]="activity" [remove]="false"></app-activity-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+    <ion-accordion value="services">
+      <ion-item slot="header">
+        <ion-label color="primary">Servicios</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <div *ngFor="let service of booking.serviceBookings;">
+          <app-service-cart-item [service]="service" [remove]="false"></app-service-cart-item>
+        </div>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-item >
+    <ion-label color="primary">Total:</ion-label>
+    <ion-text>{{totalAmount | currency:'EUR'}}</ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button class="ion-padding-end"  color="danger" [disabled]="!canBeCanceled" (click)="cancel()">Cancelar</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button class="ion-padding-start" color="primary" [disabled]="!canBePaid" (click)="pay()">Pagar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-content>

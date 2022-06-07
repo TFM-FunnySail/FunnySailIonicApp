@@ -8,7 +8,7 @@
       <ion-col size="12">Desde: {{formatDate(boatBooking.initialDate)}}</ion-col>
       <ion-col size="12">Hasta: {{formatDate(boatBooking.endDate)}}</ion-col>
       <ion-col size="10">{{boatBooking.boatData.price | currency:'EUR'}}</ion-col>
-      <ion-col size="2">
+      <ion-col size="2" *ngIf="remove">
         <ion-icon class="ion-float-end" color="danger"
                   name="trash-outline" (click)="removeBoatFromCart()"></ion-icon>
       </ion-col>

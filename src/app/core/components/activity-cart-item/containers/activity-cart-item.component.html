@@ -3,7 +3,7 @@
     <ion-row>
       <ion-col size="6">{{activity.name}}</ion-col>
       <ion-col size="3">{{activity.price | currency:'EUR'}}</ion-col>
-      <ion-col size="3">
+      <ion-col size="3" *ngIf="remove">
         <ion-icon class="ion-float-end" color="danger"
                   name="trash-outline" (click)="removeActivityFromCart()"></ion-icon>
       </ion-col>

@@ -10,7 +10,8 @@ export class ActivityCartItemComponent implements OnInit {
 
   @Input()
   activity:ActivityOutputDTO;
-
+  @Input()
+  remove: boolean = true;
   @Output()
   removeActivity: EventEmitter<any> = new EventEmitter();
 

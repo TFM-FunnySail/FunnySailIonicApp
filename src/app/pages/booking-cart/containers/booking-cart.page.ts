@@ -40,6 +40,7 @@ export class BookingCartPage implements OnInit {
   updateBookingCart(){
     this.bookingCart = this.bookingCartService.getCart();
     //Calculo del total
+    this.total = 0;
     this.bookingCart.activities.map(x=>this.total += x.price);
     this.bookingCart.services.map(x=>this.total += x.price);
     this.bookingCart.boats.map(x=>this.total += x.boatData.price);
