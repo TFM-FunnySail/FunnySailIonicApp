@@ -8,16 +8,18 @@ import { BookingCartPageRoutingModule } from './booking-cart-routing.module';
 
 import { BookingCartPage } from './containers/booking-cart.page';
 import {CoreModule} from "../../core/core.module";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ReactiveFormsModule,
-    BookingCartPageRoutingModule,
-    CoreModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ReactiveFormsModule,
+        BookingCartPageRoutingModule,
+        CoreModule,
+        TranslateModule,
+    ],
   declarations: [BookingCartPage]
 })
 export class BookingCartPageModule {}

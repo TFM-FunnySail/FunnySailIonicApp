@@ -51,5 +51,14 @@
       "ago": "Hasta :",
       "button": "Buscar"
     }
+  },
+  "bookingCart": {
+    "title": "Carrito",
+    "boats": "Embarcaciones",
+    "activities": "Actividades",
+    "services": "Servicios",
+    "people": "Personas conmigo:",
+    "button": "Reservar",
+    "total": "Total:"
   }
 }
