@@ -1,15 +1,15 @@
-<app-header [title]="'Registro'"></app-header>
+<app-header [title]="'signup.title'"></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-segment class="ion-margin-top" (ionChange)="segmentChanged($event)" value="identity">
     <ion-segment-button value="identity">
-      <ion-label>Credenciales</ion-label>
+      <ion-label>{{'signup.credentials' | translate}}</ion-label>
     </ion-segment-button>
     <ion-segment-button value="userData">
-      <ion-label>Datos personales</ion-label>
+      <ion-label>{{'signup.personalData' | translate}}</ion-label>
     </ion-segment-button>
     <ion-segment-button value="address">
-      <ion-label>Dirección</ion-label>
+      <ion-label>{{'signup.address' | translate}}</ion-label>
     </ion-segment-button>
   </ion-segment>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
@@ -18,19 +18,19 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Email</ion-label>
+            <ion-label>{{'signup.email' | translate}}</ion-label>
             <ion-input name="email" type="email" formControlName="email"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Contraseña</ion-label>
+            <ion-label>{{'signup.password' | translate}}</ion-label>
             <ion-input name="password" type="password" formControlName="password"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Confirma contraseña</ion-label>
+            <ion-label>{{'signup.confirmPassword' | translate}}</ion-label>
             <ion-input name="confirmPassword" type="password" formControlName="confirmPassword"></ion-input>
           </ion-item>
         </ion-col>
@@ -40,19 +40,19 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Nombre</ion-label>
+            <ion-label>{{'signup.name' | translate}}</ion-label>
             <ion-input name="firstName" type="text" formControlName="firstName"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Apellidos</ion-label>
+            <ion-label>{{'signup.surname' | translate}}</ion-label>
             <ion-input name="lastName" type="text" formControlName="lastName"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Cumpleaños</ion-label>
+            <ion-label>{{'signup.birthday' | translate}}</ion-label>
             <ion-input [value]="dateValue2" formControlName="birthDay"></ion-input>
             <ion-button fill="clear" id="open-date-input-2">
               <ion-icon icon="calendar"></ion-icon>
@@ -70,7 +70,7 @@
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Teléfono</ion-label>
+            <ion-label>{{'signup.phone' | translate}}</ion-label>
             <ion-input name="phoneNumber" type="text" formControlName="phoneNumber"></ion-input>
           </ion-item>
         </ion-col>
@@ -80,31 +80,31 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Dirección</ion-label>
+            <ion-label>{{'signup.address' | translate}}</ion-label>
             <ion-input name="address" type="text" formControlName="address"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Ciudad</ion-label>
+            <ion-label>{{'signup.city' | translate}}</ion-label>
             <ion-input name="city" type="text" formControlName="city"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Provincia</ion-label>
+            <ion-label>{{'signup.province' | translate}}</ion-label>
             <ion-input name="state" type="text" formControlName="state"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Cod. Postal</ion-label>
+            <ion-label>{{'signup.postalCode' | translate}}</ion-label>
             <ion-input name="zipCode" type="text" formControlName="zipCode"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label>País</ion-label>
+            <ion-label>{{'signup.country' | translate}}</ion-label>
             <ion-input name="country" type="text" formControlName="country"></ion-input>
           </ion-item>
         </ion-col>
@@ -121,7 +121,7 @@
       <ion-col>
         <ion-button class="button-end" color="primary" expand="full" type="submit"
                     [disabled]="registerForm.invalid"
-        >Registrarse</ion-button>
+        >{{'signup.button' | translate}}</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

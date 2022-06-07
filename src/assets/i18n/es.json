@@ -116,5 +116,30 @@
   "serviceDetail": {
     "title": "Servicio",
     "button": "Reservar"
+  },
+  "services": {
+    "title": "Servicios",
+    "name": "Nombre",
+    "priceMin": "Precio Min.",
+    "priceMax": "Precio Max.",
+    "button": "Buscar"
+  },
+  "signup": {
+    "title": "Registro",
+    "credentials": "Credenciales",
+    "personalData": "Datos personales",
+    "address": "Dirección",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirma Contraseña",
+    "name": "Nombre",
+    "surname": "Apellidos",
+    "birthday": "Fecha de nacimiento",
+    "phone": "Teléfono",
+    "city": "Ciudad",
+    "province": "Provincia",
+    "postalCode": "Código Postal",
+    "country": "País",
+    "button": "Registrarse"
   }
 }
