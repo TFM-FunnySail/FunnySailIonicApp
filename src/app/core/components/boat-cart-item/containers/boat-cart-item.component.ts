@@ -12,6 +12,8 @@ export class BoatCartItemComponent implements OnInit {
 
   @Input()
   boatBooking:BoatBookingCartModel;
+  @Input()
+  remove:boolean = true;
 
   @Output()
   removeBoat: EventEmitter<any> = new EventEmitter();

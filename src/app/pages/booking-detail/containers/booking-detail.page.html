@@ -1,9 +1,25 @@
 <app-header [title]="'Reserva'"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-title>
+  <ion-title class="ion-margin-top">
     ID: {{id}}
   </ion-title>
+  <ion-item>
+    <ion-label>Fecha de compra:</ion-label>
+    <ion-text>{{formatDate(booking?.createdDate)}}</ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-label>Pagada:</ion-label>
+    <ion-text>{{booking?.paid ? 'Si':'No'}}</ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-label>Estado:</ion-label>
+    <ion-text>{{booking?.status}}</ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-label>Total de personas:</ion-label>
+    <ion-text>{{booking?.totalPeople}}</ion-text>
+  </ion-item>
   <ion-accordion-group class="ion-margin-top" [multiple]="true" [value]="['boats', 'services','activities']">
     <ion-accordion value="boats">
       <ion-item slot="header">
@@ -11,7 +27,7 @@
       </ion-item>
       <ion-list slot="content">
         <div *ngFor="let boat of boatsBooking;">
-          <app-boat-cart-item [boatBooking]="boat"></app-boat-cart-item>
+          <app-boat-cart-item [boatBooking]="boat" [remove]="false"></app-boat-cart-item>
         </div>
       </ion-list>
     </ion-accordion>
@@ -21,7 +37,7 @@
       </ion-item>
       <ion-list slot="content">
         <div *ngFor="let activity of booking.activyBookings;">
-          <app-activity-cart-item [activity]="activity"></app-activity-cart-item>
+          <app-activity-cart-item [activity]="activity" [remove]="false"></app-activity-cart-item>
         </div>
       </ion-list>
     </ion-accordion>
@@ -31,13 +47,14 @@
       </ion-item>
       <ion-list slot="content">
         <div *ngFor="let service of booking.serviceBookings;">
-          <app-service-cart-item [service]="service"></app-service-cart-item>
+          <app-service-cart-item [service]="service" [remove]="false"></app-service-cart-item>
         </div>
       </ion-list>
     </ion-accordion>
   </ion-accordion-group>
-  <ion-item color="warning">
-    <ion-label>Total:</ion-label>
+  <ion-item >
+    <ion-label color="primary">Total:</ion-label>
     <ion-text>{{totalAmount | currency:'EUR'}}</ion-text>
   </ion-item>
+
 </ion-content>

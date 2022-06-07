@@ -11,9 +11,11 @@ export class ServiceCartItemComponent implements OnInit {
 
   @Input()
   service:ServiceOutputDTO;
-
+  @Input()
+  remove: boolean = true;
   @Output()
   removeService: EventEmitter<any> = new EventEmitter();
+
 
   constructor() { }
 

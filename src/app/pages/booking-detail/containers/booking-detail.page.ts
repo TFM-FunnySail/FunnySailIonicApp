@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BookingOutputDTO, BookingService} from "../../../shared/sdk";
 import {ActivatedRoute} from "@angular/router";
 import {BoatBookingCartModel} from "../../../shared/data/booking-cart";
+import {format, parseISO} from "date-fns";
 
 @Component({
   selector: 'app-booking-detail',
@@ -36,11 +37,20 @@ export class BookingDetailPage implements OnInit {
         boatData:{
           price:b.price,
           id:b.id,
-          name:b.name
+          name:b.name,
+          boatResources:b.boatResources
         }
       }
     });
     this.totalAmount = resp.clientInvoiceLine.totalAmount;
+
     return resp;
+  }
+
+  formatDate(value: string) {
+    if(!value || value === '')
+      return '';
+
+    return format(parseISO(value), 'MMM dd yyyy');
   }
 }
