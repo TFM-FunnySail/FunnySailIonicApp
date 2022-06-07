@@ -78,5 +78,13 @@
     "total": "Total:",
     "cancel": "Cancelar",
     "pay": "Pagar"
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Por favor, escriba sus datos",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "logIn": "Iniciar Sesión",
+    "signup": "Registrarse"
   }
 }

@@ -5,18 +5,20 @@ import {LoginRoutingModule} from "./login-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CoreModule} from "../../core/core.module";
 import {IonicModule} from "@ionic/angular";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
     LoginComponent,
   ],
-  imports: [
-    CommonModule,
-    LoginRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CoreModule
-  ]
+    imports: [
+        CommonModule,
+        LoginRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CoreModule,
+        TranslateModule
+    ]
 })
 export class LoginModule {
 }
