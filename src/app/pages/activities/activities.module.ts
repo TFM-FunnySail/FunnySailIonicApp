@@ -9,16 +9,18 @@ import { ActivitiesPageRoutingModule } from './activities-routing.module';
 import { ActivitiesPage } from './containers/activities.page';
 import {CoreModule} from "../../core/core.module";
 import {ActivityCardModule} from "../../core/components/activity-card/activity-card.module";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    IonicModule,
-    ActivitiesPageRoutingModule,
-    CoreModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        IonicModule,
+        ActivitiesPageRoutingModule,
+        CoreModule,
+        TranslateModule
+    ],
   declarations: [ActivitiesPage]
 })
 export class ActivitiesPageModule {}

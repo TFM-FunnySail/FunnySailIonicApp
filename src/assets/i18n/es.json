@@ -19,5 +19,13 @@
     "insurance": {
       "title": "Navega con total seguridad"
     }
+  },
+  "activities": {
+    "form": {
+      "name" : "Nombre",
+      "priceMin": "Precio Min.",
+      "priceMax": "Precio Max.",
+      "button": "search"
+    }
   }
 }
