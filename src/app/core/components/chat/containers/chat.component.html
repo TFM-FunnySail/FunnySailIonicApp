@@ -1,13 +1,13 @@
 <div class="chat-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
-    <h1>Chat</h1>
+    <h1>{{'chat.title' | translate}}</h1>
 
-    <ion-label for="msg"> <strong>Mensaje </strong></ion-label>
+    <ion-label for="msg"> <strong>{{'chat.message' | translate}} </strong></ion-label>
     <ion-textarea class="textareaChat" placeholder="Escriba su mensaje.." id="msg" name="msg" required></ion-textarea>
 
-    <ion-button type="submit"> Enviar </ion-button>
-    <ion-button color="danger" (click)="showChat()"> Cerrar </ion-button>
+    <ion-button type="submit"> {{'chat.send' | translate}} </ion-button>
+    <ion-button color="danger" (click)="showChat()"> {{'chat.close' | translate}} </ion-button>
   </form>
 </div>
-<ion-button color="dark" (click)="showChat()"> Chat </ion-button>
+<ion-button color="dark" (click)="showChat()"> {{'chat.title' | translate}} </ion-button>
 

@@ -1,6 +1,6 @@
 <ion-footer >
   <ion-toolbar>
-   
+
       <div class="container">
         <div class="row">
           <div class="col">
@@ -12,12 +12,12 @@
                 <ion-row>
                   <ion-col size="12" offset="4">
                     <ion-item class="center">
-                      <ion-label position="floating" for="language">Idioma</ion-label>
+                      <ion-label position="floating" for="language">{{'footer.language' | translate}}</ion-label>
                       <ion-select name="language" placeholder="Idioma"
                                   id="language"
                                   formControlName="language">
-                        <ion-select-option value="es">Español</ion-select-option>
-                        <ion-select-option value="en">Ingles</ion-select-option>
+                        <ion-select-option value="es">{{'footer.spanish' | translate}}</ion-select-option>
+                        <ion-select-option value="en">{{'footer.english' | translate}}</ion-select-option>
                       </ion-select>
                     </ion-item>
                   </ion-col>
@@ -28,6 +28,6 @@
         </div>
 
       </div>
-    
+
   </ion-toolbar>
 </ion-footer>

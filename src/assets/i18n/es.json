@@ -147,5 +147,29 @@
     "postalCode": "Código Postal",
     "country": "País",
     "button": "Registrarse"
+  },
+  "chat": {
+    "title": "Chat",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "close": "Cerrar"
+  },
+  "contactUs": {
+    "title": "Nuestro contacto:",
+    "phone": "Teléfono:",
+    "email": "Correo electrónico",
+    "company": "Empresa:",
+    "schedule": "Horario:"
+  },
+  "footer": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "refunds": {
+    "date": "Fecha:",
+    "description": "Descripción:",
+    "amountToReturn": "Cantidad a devolver:",
+    "price": "Precio:"
   }
 }
