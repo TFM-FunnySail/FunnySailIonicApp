@@ -105,5 +105,12 @@
     "boats": "Barcos",
     "crateBoat": "Crear barco",
     "logOut": "Cerrar Sesión"
+  },
+  "refundsBooking":{
+    "title": "Devoluciones y pedidos",
+    "orders": "Mis pedidos",
+    "refunds": "Mis devoluciones",
+    "noOrders": "No tienes reservas",
+    "noRefunds": "No tienes devoluciones"
   }
 }

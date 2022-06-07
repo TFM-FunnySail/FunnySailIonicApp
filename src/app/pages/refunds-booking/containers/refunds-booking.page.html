@@ -1,12 +1,12 @@
-<app-header [title]="'Devoluciones y pedidos'"></app-header>
+<app-header [title]="'refundsBooking.title'"></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-segment class="ion-margin-top" (ionChange)="segmentChanged($event)" value="booking">
     <ion-segment-button value="booking">
-      <ion-label>Mis pedidos</ion-label>
+      <ion-label>{{'refundsBooking.orders' | translate}}</ion-label>
     </ion-segment-button>
     <ion-segment-button value="refunds">
-      <ion-label>Mis devoluciones</ion-label>
+      <ion-label>{{'refundsBooking.refunds' | translate}}</ion-label>
     </ion-segment-button>
   </ion-segment>
 
@@ -34,7 +34,7 @@
         <ion-row>
           <ion-col>
             <ion-text color="primary">
-              <h1>No tienes devoluciones</h1>
+              <h1>{{'refundsBooking.noOrders' | translate}}</h1>
             </ion-text>
           </ion-col>
         </ion-row>
@@ -45,7 +45,7 @@
         <ion-row>
           <ion-col>
             <ion-text color="primary">
-              <h1>No tienes reservas</h1>
+              <h1>{{'refundsBooking.noRefunds' | translate}}</h1>
             </ion-text>
           </ion-col>
         </ion-row>
