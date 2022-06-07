@@ -9,7 +9,7 @@
       <ion-label>Mis devoluciones</ion-label>
     </ion-segment-button>
   </ion-segment>
- 
+
   <ion-grid class="ion-margin-top">
     <ng-container *ngIf="segment === 'booking';">
       <ion-row *ngIf="countBookings > 0; else notBoats">
@@ -53,5 +53,5 @@
     </ng-template>
   </ion-grid>
 
-
+  <app-footer></app-footer>
 </ion-content>
