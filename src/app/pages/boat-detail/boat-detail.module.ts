@@ -6,16 +6,18 @@ import { BoatDetailPageRoutingModule } from './boat-detail-routing.module';
 import { BoatDetailPage } from './containers/boat-detail.page';
 import {CoreModule} from "../../core/core.module";
 import {SharedModule} from "../../shared/shared.module";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BoatDetailPageRoutingModule,
-    CoreModule,
-    SharedModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        BoatDetailPageRoutingModule,
+        CoreModule,
+        SharedModule,
+        TranslateModule
+    ],
   declarations: [BoatDetailPage]
 })
 export class BoatDetailPageModule {}

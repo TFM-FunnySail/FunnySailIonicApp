@@ -1,4 +1,4 @@
-<app-header [title]="'Detalles'"></app-header>
+<app-header [title]="'boatDetail.title'"></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-grid>
@@ -15,35 +15,35 @@
       <ion-col size="12">
         <ion-item>
           <img alt='Capacity icon' src="assets/capacity.png" width="35" style="margin-right:10px;">
-          <p>{{boat.capacity}} Personas</p>
+          <p>{{boat.capacity}} {{'boatDetail.people' | translate}}</p>
         </ion-item>
       </ion-col>
       <ion-col size="12">
         <ion-item>
           <img alt='length icon' src="assets/boat-length.png" width="35" style="margin-right:10px;">
-          <p>{{boat.length}} m Longitud</p>
+          <p>{{boat.length}} m {{'boatDetail.length' | translate}}</p>
         </ion-item>
       </ion-col>
       <ion-col size="12">
         <ion-item>
           <img alt='width icon' src="assets/boat-width.png" width="35" style="margin-right:10px;">
-          <p>{{boat.sleeve}} m Manga</p>
+          <p>{{boat.sleeve}} m {{'boatDetail.sleeve' | translate}}</p>
         </ion-item>
       </ion-col>
       <ion-col size="12">
         <ion-item>
           <img alt="power icon" src="assets/boat-power.png" width="35" style="margin-right:10px;">
-          <p>{{boat.motorPower}} Potencia</p>
+          <p>{{boat.motorPower}} {{'boatDetail.motorPower' | translate}}</p>
         </ion-item>
       </ion-col>
       <ion-col size="12">
         <ion-item>
           <img alt="price icon" src="assets/price-tag.png" width="35" style="margin-right:10px;">
-          <p>{{boat.price | currency:'EUR'}}(precio según fecha seleccionada)</p>
+          <p>{{boat.price | currency:'EUR'}}{{'boatDetail.price' | translate}}</p>
         </ion-item>
       </ion-col>
       <ion-col class="ion-margin-top ion-text-center" size="12">
-        <ion-button color="primary" (click)="booking()">Reservar</ion-button>
+        <ion-button color="primary" (click)="booking()">{{'boatDetail.button' | translate}}</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
