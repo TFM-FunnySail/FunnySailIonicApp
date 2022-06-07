@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {sdkApiConfigurationProvider} from './shared/sdkApiConfigurationFactory';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
 import {AppHttpInterceptor} from "./shared/interceptors/app-http.interceptor";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +20,13 @@ import {AppHttpInterceptor} from "./shared/interceptors/app-http.interceptor";
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, './assets/i18n/'),
+        deps: [HttpClient]
+      }
+    }),
     FormsModule,
     ReactiveFormsModule,
     CoreModule,

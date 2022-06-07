@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router, RouterEvent} from "@angular/router";
+import {TranslateService} from "@ngx-translate/core";
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,6 +15,14 @@ export class AppComponent {
     { title: 'Perfil', url: '/profile', icon: 'person'},
     { title: 'Devoluciones y pedidos', url: '/refunds-booking', icon: 'calendar'}
   ];
-  constructor() {
+  constructor(private translateService: TranslateService) {
+    this.initTranslate();
+  }
+
+  private initTranslate() {
+    this.translateService.addLangs(['es']);
+    this.translateService.setDefaultLang('es');
+    const browserLang = this.translateService.getBrowserLang();
+    this.translateService.use(browserLang.match(/es/) ? browserLang : 'es');
   }
 }
