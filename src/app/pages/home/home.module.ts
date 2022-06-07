@@ -4,6 +4,7 @@ import { HomePage } from "./containers/home.page";
 import { HomePageRoutingModule } from "./home-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CoreModule } from "../../core/core.module";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CoreModule } from "../../core/core.module";
     HomePageRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    TranslateModule
   ]
 })
 export class HomePageModule {

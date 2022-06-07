@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "¡La mejor solución para alquilar un barco!",
+    "subtitle": "Más de 40,000 barcos que alquilar al mejor precio y en todo el mundo.",
+    "owner": {
+      "title": "Propietario",
+      "paragraph1": "Crea un anuncio gratuito para alquilar tu barco. Barcos, zodiacs, lanchas, catamaranes, todos son bienvenidos en FunnySail!",
+      "paragraph2": "Alquila a quien desees, cuando quieras y al precio que veas conveniente. Click&Boat te ayuda a rentabilizar tu barco al permitirte cubrir los gastos de mantenimiento y uso.",
+      "paragraph3": "Seguro a todo riesgo opcional de hasta ocho millones de euros de cobertura y plataforma de pago segura para la fianza. Confíanos el alquiler de tu velero, barco a motor o catamarán.",
+      "button" : "Alquila tu barco"
+    },
+    "lessee": {
+      "title": "Arrendatario",
+      "paragraph1": "Consulta todos los anuncios a través del motor de búsqueda. Encuentra un barco o un velero en alquiler en cualquier lugar de Europa y al mejor precio. Disfruta de nuestro seguro incluído para alquilar y navegar con total seguridad.",
+      "paragraph2": "Ponte en contacto con los propietarios de las embarcaciones de manera gratuita y pregúntales sobre cuestiones relativas a la embarcación: disponibilidad , equipamiento, etc. a través del servicio de mensajería incorporado.",
+      "paragraph3": "Reserva directamente online con total seguridad y alquila el barco o velero de tus sueños en tan solo unos clics. Únicamente se te realizará el cargo en caso de que el propietario de la embarcación acepte tu solicitud de alquiler. Pago seguro al 100 %. Click&Boat Es tu intermediario de confianza.",
+      "button": "Encuentra tu barco"
+    },
+    "insurance": {
+      "title": "Navega con total seguridad"
+    }
+  }
+}
