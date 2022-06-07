@@ -66,7 +66,8 @@ const routes: Routes = [
   },
   {
     path: 'booking/:id',
-    loadChildren: () => import('./pages/booking-detail/booking-detail.module').then(m => m.BookingDetailPageModule)
+    loadChildren: () => import('./pages/booking-detail/booking-detail.module').then(m => m.BookingDetailPageModule),
+    canActivate: [AuthGuard],
   },
 
 ];
