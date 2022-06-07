@@ -4,10 +4,13 @@
     "\\app",
     "\\app\\core",
     "\\app\\core\\components",
+    "\\app\\core\\components\\refunds",
+    "\\app\\core\\components\\refunds\\containers",
     "\\app\\pages",
-    "\\app\\pages\\home",
-    "\\app\\pages\\home\\containers",
-    "\\app\\shared"
+    "\\app\\pages\\refunds-booking",
+    "\\app\\pages\\sign-up",
+    "\\app\\pages\\sign-up\\containers"
   ],
+  "SelectedNode": "\\app\\pages\\service-detail",
   "PreviewInSolutionExplorer": false
 }

@@ -3,9 +3,8 @@
     "",
     "\\e2e",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\shared"
+    "\\src\\app"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\e2e\\src",
   "PreviewInSolutionExplorer": false
 }

@@ -16,6 +16,7 @@ import {ActivityCartItemModule} from "./activity-cart-item/activity-cart-item.mo
 import { CarouselModule } from './carousel/carousel.module';
 import { ChatModule } from './chat/chat.module';
 import { RefundsModule } from './refunds/refunds.module';
+import { RefundsBookingCardModule } from './refunds-booking-card/refunds-booking-card.module';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { RefundsModule } from './refunds/refunds.module';
     CarouselModule,
     ChatModule,
     RefundsModule,
+    RefundsBookingCardModule,
   ],
   exports: [
     HeaderModule,
@@ -53,6 +55,7 @@ import { RefundsModule } from './refunds/refunds.module';
     CarouselModule,
     ChatModule,
     RefundsModule,
+    RefundsBookingCardModule,
   ]
 })
 export class ComponentsModule {
