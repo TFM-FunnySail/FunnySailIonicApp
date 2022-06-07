@@ -5,9 +5,9 @@
   <ion-card-content>
     <ion-grid>
       <ion-row><ion-text>{{boat.description}}</ion-text></ion-row>
-      <ion-row><ion-text class="ion-margin-top"><b>Capacidad:</b>{{boat.capacity}} personas</ion-text></ion-row>
-      <ion-row><ion-text><b>Longitud:</b>{{boat.length}}</ion-text></ion-row>
-      <ion-row class="ion-margin-top"><ion-text><b>Precio:</b> {{boat.price | currency:'EUR'}}</ion-text></ion-row>
+      <ion-row><ion-text class="ion-margin-top"><b>{{'boatCard.capacity' | translate}}</b>{{boat.capacity}} {{'boatCard.people' | translate}}</ion-text></ion-row>
+      <ion-row><ion-text><b>{{'boatCard.length' | translate}}</b>{{boat.length}}</ion-text></ion-row>
+      <ion-row class="ion-margin-top"><ion-text><b>{{'boatCard.price' | translate}}</b> {{boat.price | currency:'EUR'}}</ion-text></ion-row>
     </ion-grid>
   </ion-card-content>
 </ion-card>

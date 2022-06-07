@@ -52,6 +52,12 @@
       "button": "Buscar"
     }
   },
+  "boatCard": {
+    "capacity": "Capacidad:",
+    "people": "Personas",
+    "length": "Longitud:",
+    "price": "Precio:"
+  },
   "bookingCart": {
     "title": "Carrito",
     "boats": "Embarcaciones",
