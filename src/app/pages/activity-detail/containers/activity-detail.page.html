@@ -3,15 +3,18 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row *ngIf="exist">
-        <ion-col size="12">
-          <h2 class="ion-text-center"><b>{{activity.name}}</b></h2>
-        </ion-col>
-        <ion-col size="12" class="ion-margin-top">
-          <ion-text>{{activity.description}}</ion-text>
-        </ion-col>
-        <ion-col size="12" class="ion-margin-top">
-          <ion-text><b>{{activity.price | currency:'EUR'}}</b></ion-text>
-        </ion-col>
+      <ion-col size="12">
+        <h2>{{activity.name}}</h2>
+      </ion-col>
+      <ion-col size="12">
+        <ion-img [src]="mainImage | apiImage"></ion-img>
+      </ion-col>
+      <ion-col size="12" class="ion-margin-top">
+        <ion-text>{{activity.description}}</ion-text>
+      </ion-col>
+      <ion-col size="12" class="ion-margin-top">
+        <ion-text><b>{{activity.price | currency:'EUR'}}</b></ion-text>
+      </ion-col>
       <hr>
     </ion-row>
     <ion-row>

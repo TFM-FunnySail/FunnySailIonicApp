@@ -9,6 +9,7 @@ import { ActivityDetailPageRoutingModule } from './activity-detail-routing.modul
 import { ActivityDetailPage } from './containers/activity-detail.page';
 import {ContactModule} from "../../core/components/contact/contact.module";
 import {CoreModule} from "../../core/core.module";
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {CoreModule} from "../../core/core.module";
     FormsModule,
     IonicModule,
     ActivityDetailPageRoutingModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   declarations: [ActivityDetailPage]
 })

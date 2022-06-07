@@ -13,6 +13,7 @@ export class ActivityDetailPage implements OnInit {
 
   exist = false;
   activity: ActivityOutputDTO;
+  mainImage: string = '';
 
   constructor(private activatedRoute: ActivatedRoute,
               private activitiesService: ActivitiesService,
@@ -35,6 +36,8 @@ export class ActivityDetailPage implements OnInit {
         if(resp){
           this.exist = true;
           this.activity = resp;
+          this.mainImage = resp.activityResources.find(x => x.main)?.uri ??
+            resp.activityResources.length > 0 ? resp.activityResources[0].uri : '';
         }
       });
     });
