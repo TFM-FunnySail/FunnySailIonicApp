@@ -9,7 +9,7 @@
       <ion-grid>
         <ion-col>
           <ion-item>
-            <ion-label>Desde:</ion-label>
+            <ion-label>{{'boatFilters.form.since' | translate}}</ion-label>
             <ion-input [value]="initialDate" formControlName="initialDate"></ion-input>
             <ion-button fill="clear" [id]="'open-date-input-' + idInput1">
               <ion-icon icon="calendar"></ion-icon>
@@ -29,7 +29,7 @@
         </ion-col>
         <ion-col>
           <ion-item>
-          <ion-label>Hasta:</ion-label>
+          <ion-label>{{'boatFilters.form.ago' | translate}}</ion-label>
           <ion-input [value]="endDate" formControlName="endDate"></ion-input>
           <ion-button fill="clear" [id]="'open-date-input-' + idInput2">
             <ion-icon icon="calendar"></ion-icon>
@@ -48,7 +48,7 @@
           </ion-item>
         </ion-col>
         <ion-col class="ion-margin-top">
-          <ion-button color="primary" (click)="onSearch($event)">Buscar</ion-button>
+          <ion-button color="primary" (click)="onSearch($event)">{{'boatFilters.form.button' | translate}}</ion-button>
         </ion-col>
       </ion-grid>
     </form>

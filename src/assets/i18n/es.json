@@ -44,5 +44,12 @@
     "motorPower": "Potencia",
     "price": "(precio según fecha seleccionada)",
     "button": "Reservar"
+  },
+  "boatFilters": {
+    "form": {
+      "since": "Desde :",
+      "ago": "Hasta :",
+      "button": "Buscar"
+    }
   }
 }
