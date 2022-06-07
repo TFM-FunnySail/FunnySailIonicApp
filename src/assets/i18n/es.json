@@ -60,5 +60,9 @@
     "people": "Personas conmigo:",
     "button": "Reservar",
     "total": "Total:"
+  },
+  "bookingCartItem": {
+    "since": "Desde :",
+    "ago": "Hasta :"
   }
 }

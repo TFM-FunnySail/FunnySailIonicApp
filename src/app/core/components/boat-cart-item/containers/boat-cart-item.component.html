@@ -5,8 +5,8 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12">{{boatBooking.boatData.name}}</ion-col>
-      <ion-col size="12">Desde: {{formatDate(boatBooking.initialDate)}}</ion-col>
-      <ion-col size="12">Hasta: {{formatDate(boatBooking.endDate)}}</ion-col>
+      <ion-col size="12">{{'bookingCartItem.since'}} {{formatDate(boatBooking.initialDate)}}</ion-col>
+      <ion-col size="12">{{'bookingCartItem.ago'}} {{formatDate(boatBooking.endDate)}}</ion-col>
       <ion-col size="10">{{boatBooking.boatData.price | currency:'EUR'}}</ion-col>
       <ion-col size="2" *ngIf="remove">
         <ion-icon class="ion-float-end" color="danger"
