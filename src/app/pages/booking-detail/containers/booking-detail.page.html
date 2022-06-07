@@ -14,7 +14,8 @@
   </ion-item>
   <ion-item>
     <ion-label>Estado:</ion-label>
-    <ion-text>{{booking?.status}}</ion-text>
+    <ion-badge color="danger" *ngIf="booking?.status === 'Cancelled'">{{booking?.status}}</ion-badge>
+    <ion-badge color="secondary" *ngIf="booking?.status !== 'Cancelled'">{{booking?.status}}</ion-badge>
   </ion-item>
   <ion-item>
     <ion-label>Total de personas:</ion-label>
@@ -56,5 +57,16 @@
     <ion-label color="primary">Total:</ion-label>
     <ion-text>{{totalAmount | currency:'EUR'}}</ion-text>
   </ion-item>
-
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button class="ion-padding-end"  color="danger" [disabled]="!canBeCanceled" (click)="cancel()">Cancelar</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button class="ion-padding-start" color="primary" [disabled]="!canBePaid" (click)="pay()">Pagar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
 </ion-content>
