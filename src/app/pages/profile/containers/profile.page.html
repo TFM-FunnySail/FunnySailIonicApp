@@ -58,25 +58,22 @@
                          formControlName="email"></ion-input>
             </ion-item>
           </ion-col>
-          <!--
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="birthday">Fecha de nacimiento</ion-label>
-              <ion-input [value]="birthday" formControlName="birthday"></ion-input>
-              <ion-button fill="clear" id="open-date-input-1">
+              <ion-label>Cumpleaños</ion-label>
+              <ion-input [value]="dateValue2" formControlName="birthDay"></ion-input>
+              <ion-button fill="clear" id="open-date-input-2">
                 <ion-icon icon="calendar"></ion-icon>
               </ion-button>
-              <ion-popover trigger="open-date-input-1" show-backdrop="false">
+              <ion-popover trigger="open-date-input-2" show-backdrop="false">
                 <ng-template>
-                  <ion-datetime [min]="minDate"
-                                #popoverDatetime1
+                  <ion-datetime #popoverDatetime2
                                 presentation="date"
-                                (ionChange)="birthday = formatDate(popoverDatetime1.value)"></ion-datetime>
+                                (ionChange)="dateValue2 = formatDate(popoverDatetime2.value)"></ion-datetime>
                 </ng-template>
               </ion-popover>
             </ion-item>
           </ion-col>
-          -->
           <ion-col size="12">
             <ion-item>
               <ion-label position="floating" for="phone">Teléfono</ion-label>
@@ -86,7 +83,7 @@
             </ion-item>
           </ion-col>
           <ion-col size="3">
-            <change-password-card></change-password-card>
+            <!--<change-password-card></change-password-card>-->
           </ion-col>
 
         </ion-row>
