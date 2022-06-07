@@ -64,5 +64,19 @@
   "bookingCartItem": {
     "since": "Desde :",
     "ago": "Hasta :"
+  },
+  "bookingDetail": {
+    "title": "Reserva",
+    "id": "ID:",
+    "dateBuy": "Fecha de compra:",
+    "paid": "Pagada:",
+    "status": "Estado:",
+    "totalPeople" : "Total de personas:",
+    "boats": "Embarcaciones",
+    "activities": "Actividades",
+    "services": "Servicios",
+    "total": "Total:",
+    "cancel": "Cancelar",
+    "pay": "Pagar"
   }
 }

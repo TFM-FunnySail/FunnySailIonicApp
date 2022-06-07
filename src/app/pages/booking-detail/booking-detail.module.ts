@@ -8,15 +8,17 @@ import { BookingDetailPageRoutingModule } from './booking-detail-routing.module'
 
 import { BookingDetailPage } from './containers/booking-detail.page';
 import {CoreModule} from "../../core/core.module";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BookingDetailPageRoutingModule,
-    CoreModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        BookingDetailPageRoutingModule,
+        CoreModule,
+        TranslateModule
+    ],
   declarations: [BookingDetailPage]
 })
 export class BookingDetailPageModule {}
