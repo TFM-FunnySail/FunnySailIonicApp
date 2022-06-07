@@ -9,6 +9,7 @@ import { ProfilePageRoutingModule } from './profile-routing.module';
 import { ProfilePage } from './containers/profile.page';
 import {CoreModule} from "../../core/core.module";
 import {BoatsFilterModule} from "../../core/components/boats-filter/boats-filter.module";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import {BoatsFilterModule} from "../../core/components/boats-filter/boats-filter
         ReactiveFormsModule,
         ProfilePageRoutingModule,
         CoreModule,
+        TranslateModule,
     ],
   declarations: [ProfilePage]
 })

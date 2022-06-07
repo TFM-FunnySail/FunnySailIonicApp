@@ -1,4 +1,4 @@
-<app-header [title]="'Perfil'"></app-header>
+<app-header [title]="'profile.title'"></app-header>
 
 <ion-content [fullscreen]="true">
 
@@ -18,16 +18,16 @@
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <h3><b>Información personal</b></h3>
+            <h3><b>{{'profile.personalInfo' | translate}}</b></h3>
           </ion-col>
           <ion-col size="4">
             <ion-button color="primary" (click)="show_form()" id="editButton">
-              <ion-icon name="pencil-outline" style="margin-right:5px"></ion-icon> editar
+              <ion-icon name="pencil-outline" style="margin-right:5px"></ion-icon> {{'profile.edit' | translate}}
             </ion-button>
           </ion-col>
           <ion-col size="4">
             <ion-button color="primary" (click)="save_form()" id="saveButton" style="display: none">
-              <ion-icon name="save-outline" style="margin-right:5px"></ion-icon> guardar
+              <ion-icon name="save-outline" style="margin-right:5px"></ion-icon> {{'profile.save' | translate}}
             </ion-button>
           </ion-col>
         </ion-row>
@@ -36,7 +36,7 @@
         <ion-row>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="name">Nombre</ion-label>
+              <ion-label position="floating" for="name">{{'profile.name' | translate}}</ion-label>
               <ion-input name="name" placeholder="Nombre" type="text"
                          id="name"
                          formControlName="name"></ion-input>
@@ -44,7 +44,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="lastName">Apellidos</ion-label>
+              <ion-label position="floating" for="lastName">{{'profile.surname' | translate}}</ion-label>
               <ion-input name="lastName" placeholder="Apellidos" type="text"
                          id="lastName"
                          formControlName="lastName"></ion-input>
@@ -52,7 +52,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="email">Email</ion-label>
+              <ion-label position="floating" for="email">{{'profile.email' | translate}}</ion-label>
               <ion-input name="email" placeholder="Email" type="text"
                          id="email"
                          formControlName="email"></ion-input>
@@ -60,7 +60,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label>Cumpleaños</ion-label>
+              <ion-label>{{'profile.birthday' | translate}}</ion-label>
               <ion-input [value]="dateValue2" formControlName="birthDay"></ion-input>
               <ion-button fill="clear" id="open-date-input-2">
                 <ion-icon icon="calendar"></ion-icon>
@@ -76,7 +76,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="phone">Teléfono</ion-label>
+              <ion-label position="floating" for="phone">{{'profile.phone' | translate}}</ion-label>
               <ion-input name="phone" placeholder="Teléfono" type="text"
                          id="phone"
                          formControlName="phone"></ion-input>
@@ -90,7 +90,7 @@
 
         <ion-row>
           <ion-col size="12">
-            <h3><b>Dirección</b></h3>
+            <h3><b>{{'profile.address' | translate}}</b></h3>
           </ion-col>
         </ion-row>
         <hr>
@@ -98,7 +98,7 @@
         <ion-row>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="address">Dirección</ion-label>
+              <ion-label position="floating" for="address">{{'profile.address' | translate}}</ion-label>
               <ion-input name="address" placeholder="Dirección" type="text"
                          id="address"
                          formControlName="address"></ion-input>
@@ -106,7 +106,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="city">Ciudad</ion-label>
+              <ion-label position="floating" for="city">{{'profile.city' | translate}}</ion-label>
               <ion-input name="city" placeholder="Ciudad" type="text"
                          id="city"
                          formControlName="city"></ion-input>
@@ -114,7 +114,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="zip">Código postal</ion-label>
+              <ion-label position="floating" for="zip">{{'profile.postalCode' | translate}}</ion-label>
               <ion-input name="zip" placeholder="Código postal" type="text"
                          id="zip"
                          formControlName="zip"></ion-input>
@@ -122,7 +122,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="country">Pais</ion-label>
+              <ion-label position="floating" for="country">{{'profile.country' | translate}}</ion-label>
               <ion-input name="country" placeholder="Pais" type="text"
                          id="country"
                          formControlName="country"></ion-input>
@@ -130,7 +130,7 @@
           </ion-col>
           <ion-col size="12">
             <ion-item>
-              <ion-label position="floating" for="state">Comunidad</ion-label>
+              <ion-label position="floating" for="state">{{'profile.community' | translate}}</ion-label>
               <ion-input name="state" placeholder="Comunidad" type="text"
                          id="state"
                          formControlName="state"></ion-input>
@@ -140,11 +140,11 @@
 
         <ion-row>
           <ion-col size="12">
-            <h3><b>Barcos</b></h3>
+            <h3><b>{{'profile.boats' | translate}}</b></h3>
           </ion-col>
           <ion-col size="4">
             <ion-button color="primary" [routerLink]="['/create-boat']">
-              crear barco
+              {{'profile.createBoat' | translate}}
             </ion-button>
           </ion-col>
         </ion-row>
@@ -152,7 +152,7 @@
 
         <ion-row>
           <ion-col size="12" style="margin-top:20px; padding-bottom: 50px;">
-            <ion-button color="danger" (click)="logout()">Cerrar sesión</ion-button>
+            <ion-button color="danger" (click)="logout()">{{'profile.logOut' | translate}}</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>

@@ -86,5 +86,24 @@
     "password": "Contraseña",
     "logIn": "Iniciar Sesión",
     "signup": "Registrarse"
+  },
+  "profile": {
+    "title": "Perfil",
+    "personalInfo": "Información personal",
+    "edit": "Editar",
+    "save": "Guardar",
+    "name": "Nombre",
+    "surname": "Apellidos",
+    "email": "Correo electrónico",
+    "birthday": "Fecha de nacimiento",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "city": "City",
+    "postalCode": "Código Postal",
+    "country": "País",
+    "community": "Comunidad",
+    "boats": "Barcos",
+    "crateBoat": "Crear barco",
+    "logOut": "Cerrar Sesión"
   }
 }
