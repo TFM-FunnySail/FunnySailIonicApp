@@ -112,5 +112,9 @@
     "refunds": "Mis devoluciones",
     "noOrders": "No tienes reservas",
     "noRefunds": "No tienes devoluciones"
+  },
+  "serviceDetail": {
+    "title": "Servicio",
+    "button": "Reservar"
   }
 }
