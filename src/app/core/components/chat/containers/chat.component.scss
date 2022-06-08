@@ -4,9 +4,9 @@
   display: none;
   bottom: 0;
   right: 15px;
-  margin:10px;
   z-index: 9;
   color:black;
+  position:fixed;
 }
 
 /* Add styles to the form container */
@@ -28,6 +28,10 @@
   resize: none;
   min-height: 200px;
   text-align:left;
+}
+
+#botonChat {
+  --border-radius: 100%;
 }
 
 ion-textarea#msg:focus {
