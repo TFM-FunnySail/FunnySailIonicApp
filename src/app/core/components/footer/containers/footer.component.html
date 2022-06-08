@@ -1,33 +1,31 @@
-<ion-footer >
-  <ion-toolbar>
-
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <chat></chat>
-            <p class="text-white">FunnySail</p>
-            <p class="text-white"> Copyright &copy; 2021 </p>
-            <form [formGroup]="languageForm">
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="12" offset="4">
-                    <ion-item class="center">
-                      <ion-label position="floating" for="language">{{'footer.language' | translate}}</ion-label>
-                      <ion-select name="language" placeholder="Idioma"
-                                  id="language"
-                                  formControlName="language">
-                        <ion-select-option value="es">{{'footer.spanish' | translate}}</ion-select-option>
-                        <ion-select-option value="en">{{'footer.english' | translate}}</ion-select-option>
-                      </ion-select>
-                    </ion-item>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </form>
-          </div>
-        </div>
-
-      </div>
-
-  </ion-toolbar>
+<ion-footer>
+    <div class="container">
+      <ion-row>
+        <ion-col>
+          <chat style="float:right;margin-top:-30px;"></chat>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="text-white">FunnySail Copyright &copy; 2021 </p>
+          <form [formGroup]="languageForm">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12" offset="4">
+                  <ion-item class="center">
+                    <ion-label position="floating" for="language">{{'footer.language' | translate}}</ion-label>
+                    <ion-select name="language" placeholder="Idioma"
+                                id="language"
+                                formControlName="language">
+                      <ion-select-option value="es">{{'footer.spanish' | translate}}</ion-select-option>
+                      <ion-select-option value="en">{{'footer.english' | translate}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ion-col>
+      </ion-row>
+    </div>
 </ion-footer>
