@@ -5,6 +5,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {StorageService} from "../../../shared/services/storage/storage.service";
 import {BookingService} from "../../../shared/sdk";
 import {Router} from "@angular/router";
+import {ToastService} from "../../../shared/services/toast/toast.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-booking-cart',
@@ -23,7 +25,9 @@ export class BookingCartPage implements OnInit {
               private formBuilder: FormBuilder,
               protected storageService: StorageService,
               protected bookingService: BookingService,
-              protected router:Router) {
+              protected router:Router,
+              protected toastService: ToastService,
+              protected translateService: TranslateService) {
     this.updateBookingCart();
     this.form = this.formBuilder.group({
       totalPeople: new FormControl('1',[Validators.required])
@@ -82,6 +86,7 @@ export class BookingCartPage implements OnInit {
       this.bookingService.apiBookingPost(form).subscribe(resp=>{
         console.log(resp);
         this.bookingCartService.cleanCart();
+        this.toastService.showInfo(this.translateService.instant('bookingCart.success'));
         this.router.navigate(['booking/' + resp.id]);
       },err=>{
           console.log('error',err);

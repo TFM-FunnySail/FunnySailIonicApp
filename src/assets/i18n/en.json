@@ -65,7 +65,8 @@
     "services": "Services",
     "people": "People with me:",
     "button": "Book",
-    "total": "Total:"
+    "total": "Total:",
+    "success": "Reservation made"
   },
   "bookingCartItem": {
     "since": "From :",
@@ -83,7 +84,9 @@
     "services": "Services",
     "total": "Total:",
     "cancel": "Cancel",
-    "pay": "Pay"
+    "pay": "Pay",
+    "paySuccess": "Satisfactory payment",
+    "cancelSuccess": "Satisfactory cancellation"
   },
   "login": {
     "title": "Login",

@@ -4,6 +4,8 @@ import {ActivatedRoute} from "@angular/router";
 import {BoatBookingCartModel} from "../../../shared/data/booking-cart";
 import {format, parseISO} from "date-fns";
 import {AlertController} from "@ionic/angular";
+import {ToastService} from "../../../shared/services/toast/toast.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-booking-detail',
@@ -20,7 +22,9 @@ export class BookingDetailPage implements OnInit {
   canBePaid: boolean = false;
   constructor(protected bookingService: BookingService,
               protected router: ActivatedRoute,
-              protected alertController:AlertController) { }
+              protected alertController:AlertController,
+              protected toastService: ToastService,
+              protected translateService: TranslateService) { }
 
   ngOnInit() {
     this.router.params.subscribe(params => {
@@ -99,6 +103,7 @@ export class BookingDetailPage implements OnInit {
       console.log(resp);
       this.booking.status = 'Cancelled';
       this.handlerStatus(this.booking);
+      this.toastService.showInfo('Cancelled');
     },err=>{
       console.log(err);
     })
@@ -165,6 +170,7 @@ export class BookingDetailPage implements OnInit {
       this.booking.paid = true;
       this.booking.status = 'Rented';
       this.handlerStatus(this.booking);
+      this.toastService.showInfo(this.translateService.instant('bookingDetail.paySuccess'));
     },err=>{
       console.log(err);
     })
