@@ -91,7 +91,8 @@
     "email": "Email",
     "password": "Password",
     "logIn": "Log in",
-    "signup": "Register"
+    "signup": "Register",
+    "user-login": "User logged in",
   },
   "profile": {
     "title": "Profile",
@@ -146,7 +147,9 @@
     "province": "Province",
     "postalCode": "Postal Code",
     "country": "Country",
-    "button": "Register"
+    "button": "Register",
+    "success": "Registered user",
+    "passwordError": "Passwords must be the same"
   },
   "chat": {
     "title": "Chat",

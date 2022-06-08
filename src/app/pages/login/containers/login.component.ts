@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {AuthService} from "../../../shared/services/auth/auth.service";
 import {UsersService} from "../../../shared/sdk";
 import {StorageService} from "../../../shared/services/storage/storage.service";
+import {ToastService} from "../../../shared/services/toast/toast.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,9 @@ export class LoginComponent implements OnInit {
               private router: Router,
               protected authService:AuthService,
               protected userService: UsersService,
-              protected storageService:StorageService) {
+              protected storageService:StorageService,
+              protected toastService: ToastService,
+              protected translateService: TranslateService) {
 
     this.form = this.formBuilder.group({
       email: new FormControl('',[Validators.required]),
@@ -36,13 +40,14 @@ export class LoginComponent implements OnInit {
   login() {
     if (!this.form.invalid){
       this.authService.login(this.form.value,(resp: any)=>{
-        console.log(resp)
+        console.log(resp);
         if(resp){
           this.userService.apiUsersIdGet(resp.id).subscribe(resp=>{
             console.log(resp);
             this.storageService.setItem("userId",resp.userId);
             this.storageService.setItem("User",resp.firstName);
             this.storageService.setItem("userEmail",resp.email);
+            this.toastService.showInfo(this.translateService.instant("login.user-login"));
           });
         }
         this.router.navigate(['']);

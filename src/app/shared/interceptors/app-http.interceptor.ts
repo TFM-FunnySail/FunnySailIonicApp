@@ -9,11 +9,13 @@ import {Observable, throwError} from 'rxjs';
 import {AuthService} from "../services/auth/auth.service";
 import {Router} from "@angular/router";
 import {catchError, tap} from "rxjs/operators";
+import {ToastService} from "../services/toast/toast.service";
 
 @Injectable()
 export class AppHttpInterceptor implements HttpInterceptor {
 
-  constructor(protected authService: AuthService, protected router:Router) {}
+  constructor(protected authService: AuthService, protected router:Router,
+              protected toastService: ToastService,) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const tokenInfo = this.authService.getTokenIfLoggedIn();
@@ -35,6 +37,8 @@ export class AppHttpInterceptor implements HttpInterceptor {
         if (err.status === 401) {
           this.router.navigateByUrl('auth/login');
         }
+        this.toastService.showError(err.error?.esMessage ?? err.message);
+
         console.log(err);
         return throwError( err );
       })

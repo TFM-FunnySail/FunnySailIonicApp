@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UsersService} from "../../../shared/sdk";
 import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
+import {ToastService} from "../../../shared/services/toast/toast.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +20,9 @@ export class SignUpPage implements OnInit {
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
-              protected userService: UsersService,) {
+              protected userService: UsersService,
+              protected toastService: ToastService,
+              protected translateService: TranslateService) {
     this.registerForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email]],
@@ -57,11 +61,12 @@ export class SignUpPage implements OnInit {
       console.log(this.registerForm.value);
       const values = this.registerForm.value;
       if(values.password !== values.confirmPassword){
-        this.error = "Las contraseñas deben ser iguales";
+        this.error = this.translateService.instant("signup.passwordError");
         return;
       }
       this.registerForm.value.birthDay = this.reFormatDate(this.registerForm.value.birthDay);
       this.userService.apiUsersPost(this.registerForm.value).subscribe(()=>{
+        this.toastService.showInfo(this.translateService.instant("signup.success"));
         this.router.navigate(['']);
       }, (error) => {
         console.log(error);

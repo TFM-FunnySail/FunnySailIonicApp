@@ -91,7 +91,8 @@
     "email": "Correo electrónico",
     "password": "Contraseña",
     "logIn": "Iniciar Sesión",
-    "signup": "Registrarse"
+    "signup": "Registrarse",
+    "user-login": "Usuario logueado"
   },
   "profile": {
     "title": "Perfil",
@@ -146,7 +147,9 @@
     "province": "Provincia",
     "postalCode": "Código Postal",
     "country": "País",
-    "button": "Registrarse"
+    "button": "Registrarse",
+    "success": "Usuario registrado",
+    "passwordError": "Las contraseñas deben ser iguales"
   },
   "chat": {
     "title": "Chat",
