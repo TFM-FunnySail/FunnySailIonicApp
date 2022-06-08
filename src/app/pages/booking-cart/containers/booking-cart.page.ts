@@ -17,6 +17,7 @@ export class BookingCartPage implements OnInit {
   total:number = 0;
   form:FormGroup;
   error: string= '';
+  notPaiyment:boolean = false;
 
   constructor(protected bookingCartService: BookingCartService,
               private formBuilder: FormBuilder,
@@ -44,6 +45,9 @@ export class BookingCartPage implements OnInit {
     this.bookingCart.activities.map(x=>this.total += x.price);
     this.bookingCart.services.map(x=>this.total += x.price);
     this.bookingCart.boats.map(x=>this.total += x.boatData.price);
+
+    this.notPaiyment = this.bookingCart.activities.length === 0 && this.bookingCart.services.length === 0
+                        && this.bookingCart.boats.length === 0;
   }
 
   removeBoatFromCart(boat){

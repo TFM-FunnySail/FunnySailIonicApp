@@ -47,7 +47,7 @@
       <h5>{{error}}</h5>
     </ion-text>
     <div class="ion-text-center">
-      <ion-button class="ion-margin-top " color="primary" (click)="booking()">{{'bookingCart.button' | translate }}</ion-button>
+      <ion-button class="ion-margin-top" [disabled]="notPaiyment" color="primary" (click)="booking()">{{'bookingCart.button' | translate }}</ion-button>
     </div>
 
   </form>
