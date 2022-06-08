@@ -1,15 +1,15 @@
 <app-header [title]="'signup.title'"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-segment class="ion-margin-top" (ionChange)="segmentChanged($event)" value="identity">
+  <ion-segment  (ionChange)="segmentChanged($event)" value="identity">
     <ion-segment-button value="identity">
-      <ion-label>{{'signup.credentials' | translate}}</ion-label>
+      <ion-icon name="finger-print-outline"></ion-icon>
     </ion-segment-button>
     <ion-segment-button value="userData">
-      <ion-label>{{'signup.personalData' | translate}}</ion-label>
+      <ion-icon name="person-circle-outline"></ion-icon>
     </ion-segment-button>
     <ion-segment-button value="address">
-      <ion-label>{{'signup.address' | translate}}</ion-label>
+      <ion-icon name="train-outline"></ion-icon>
     </ion-segment-button>
   </ion-segment>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
