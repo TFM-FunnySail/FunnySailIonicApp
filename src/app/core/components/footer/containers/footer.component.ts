@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +11,7 @@ export class FooterComponent implements OnInit {
   languageForm: FormGroup;
   language: any;
   //private translateService: agregar TranslateService al constructor
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private translateService: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -18,13 +19,13 @@ export class FooterComponent implements OnInit {
       language: ['']
     });
     
-    /*
-    this.form.get('language').valueChanges.subscribe(() => {
+
+    this.languageForm.get('language').valueChanges.subscribe(() => {
       console.log('algo');
-      this.translateService.use(this.form.get('language').value);
-      this.translateService.setDefaultLang(this.form.get('language').value);
+      this.translateService.use(this.languageForm.get('language').value);
+      this.translateService.setDefaultLang(this.languageForm.get('language').value);
     });
-    */
+
   }
 
 }
