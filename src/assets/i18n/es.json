@@ -177,5 +177,14 @@
     "description": "Descripción:",
     "amountToReturn": "Cantidad a devolver:",
     "price": "Precio:"
+  },
+  "menu": {
+    "boats": "Embarcaciones",
+    "home": "Home",
+    "profile": "Perfil",
+    "booking": "Devoluciones y pedidos",
+    "activities": "Actividades",
+    "services": "Servicios",
+    "login": "Login"
   }
 }

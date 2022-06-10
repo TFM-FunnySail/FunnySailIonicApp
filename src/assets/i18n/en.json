@@ -177,6 +177,15 @@
     "description": "Description:",
     "amountToReturn": "Amount to be returned:",
     "price": "Price:"
+  },
+  "menu": {
+    "boats": "Boats",
+    "home": "Home",
+    "profile": "Profile",
+    "booking": "Refunds and bookings",
+    "activities": "Activities",
+    "services": "Services",
+    "login": "Login"
   }
 }
 

@@ -7,13 +7,13 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: 'home', icon: 'home' },
-    { title: 'Embarcaciones', url: '/boats', icon: 'boat' },
-    { title: 'Servicios', url: '/services', icon: 'easel' },
-    { title: 'Login', url: '/login', icon: 'key' },
-    { title: 'Actividades', url: '/activities', icon: 'fish' },
-    { title: 'Perfil', url: '/profile', icon: 'person'},
-    { title: 'Devoluciones y pedidos', url: '/refunds-booking', icon: 'calendar'}
+    { title: 'menu.home', url: 'home', icon: 'home' },
+    { title: 'menu.boats', url: '/boats', icon: 'boat' },
+    { title: 'menu.services', url: '/services', icon: 'easel' },
+    { title: 'menu.login', url: '/login', icon: 'key' },
+    { title: 'menu.activities', url: '/activities', icon: 'fish' },
+    { title: 'menu.profile', url: '/profile', icon: 'person'},
+    { title: 'menu.booking', url: '/refunds-booking', icon: 'calendar'}
   ];
   constructor(private translateService: TranslateService) {
     this.initTranslate();
