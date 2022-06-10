@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TranslateService } from '@ngx-translate/core';
+import {StorageService} from "../../../../shared/services/storage/storage.service";
 
 @Component({
   selector: 'app-footer',
@@ -10,20 +11,28 @@ import { TranslateService } from '@ngx-translate/core';
 export class FooterComponent implements OnInit {
   languageForm: FormGroup;
   language: any;
-  constructor(private formBuilder: FormBuilder, private translateService: TranslateService) {
+  languageKey: string = "language";
+  constructor(private formBuilder: FormBuilder, private translateService: TranslateService,
+              protected storageService:StorageService) {
   }
 
   ngOnInit(): void {
+    const languageDefault = this.storageService.getItem(this.languageKey) ?? "es";
+    this.changeLanguage(languageDefault);
     this.languageForm = this.formBuilder.group({
-      language: ['']
+      language: [languageDefault]
     });
-    
+
 
     this.languageForm.get('language').valueChanges.subscribe(() => {
-      this.translateService.use(this.languageForm.get('language').value);
-      this.translateService.setDefaultLang(this.languageForm.get('language').value);
+      this.changeLanguage(this.languageForm.get('language').value);
+      this.storageService.setItem(this.languageKey,this.languageForm.get('language').value);
     });
 
   }
 
+  changeLanguage(language: string): void {
+    this.translateService.use(language);
+    this.translateService.setDefaultLang(language);
+  }
 }
