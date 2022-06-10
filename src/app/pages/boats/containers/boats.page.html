@@ -3,7 +3,6 @@
 <ion-content [fullscreen]="true">
   <app-boats-filter [title]="'boat.titleFilters'" (search)="search($event)"
                     [initialDateInput]="initialDate" [endDateInput]="endDate"></app-boats-filter>
-
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let boat of boats;" size="12">
@@ -11,5 +10,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <app-footer></app-footer>
 </ion-content>
